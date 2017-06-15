@@ -1,45 +1,38 @@
-<p>
-  edit works!
-</p>
-<div class="panel panel-default" *ngIf=event>
-  <div class="panel-heading">Event update Form : You can update the detail information of an Event in this page.</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Event Entry Form : You can add an Event's detail information here.</div>
   <div class="panel-body">
-    <form class="form-horizontal" *ngIf=event>
+  <form class="form-horizontal" (submit)="updateEvent()">
   <div class="form-group">
-    <label for="emp_name" class="col-sm-2 control-label">Event Name: </label>
+    <label for="event_name" class="col-sm-2 control-label">Event Name : </label>
     <div class="col-sm-9">
-      <p class="form-control">{{event.name}}</p> 
+      <input type="text" class="form-control" [(ngModel)]="model.name" name="name" >
     </div>
   </div>
   <div class="form-group">
-    <label for="position" class="col-sm-2 control-label">Description : </label>
+    <label for="description" class="col-sm-2 control-label">Description : </label>
     <div class="col-sm-9">
-     <p class="form-control">{{event.description}}</p>
+      <input type="text" class="form-control" [(ngModel)]="model.description" name="description">
     </div>
   </div>
   <div class="form-group">
-    <label for="department" class="col-sm-2 control-label">Class Name : </label>
+    <label for="class" class="col-sm-2 control-label">Class Name : </label>
     <div class="col-sm-9">
-     <p class="form-control">{{event.class}}</p>
+      <input type="text" class="form-control" [(ngModel)]="model.class" name="class">
     </div>
   </div>
   <div class="form-group">
-    <label for="salary" class="col-sm-2 control-label">Responsible Teacher : </label>
+    <label for="teacher" class="col-sm-2 control-label">Responsible Teacher : </label>
     <div class="col-sm-9">
-      <p class="form-control">{{event.teacher}}</p>
+      <input type="text" class="form-control" [(ngModel)]="model.teacher" name="teacher">
     </div>
   </div>
   
-  <div class="form-group">
-    <label for="id" class="col-sm-2 control-label">Event ID : </label>
-    <div class="col-sm-9">
-      <p class="form-control">{{event._id}}</p>
-    </div>
-  </div>
+
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-8">
-      
-      <a class="btn btn-info" (click)="goBack()">Cancel</a>
+      <button type="submit" class="btn btn-success">Save</button>
+       <a class="btn btn-info" (click)="goBack()">Cancel</a>
     </div>
    
   </div>

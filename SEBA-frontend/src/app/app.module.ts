@@ -25,7 +25,8 @@ import {EventService} from './event.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [EventService],
   bootstrap: [AppComponent]
