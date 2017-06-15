@@ -28,4 +28,11 @@ export class HomeComponent implements OnInit {
           console.log("within function getevents this.events=  ", this.events);
   	    })
   }
+
+  deleteEvent(id){
+    this.eventService.deleteEvent(id)
+         .subscribe(()=>{
+           this.getEvents();
+         })
+  }
 }

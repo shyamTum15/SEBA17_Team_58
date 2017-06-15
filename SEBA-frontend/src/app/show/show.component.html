@@ -1,40 +1,36 @@
-<p>
-  show works!
-</p>
-<br/>
-<div class="panel panel-default" >
-  <div class="panel-heading">Employee detail Form : You can see the detail information of an employee in this page of the EMS Apps.</div>
+<div class="panel panel-default" *ngIf=event>
+  <div class="panel-heading">Event detail Form : You can see the detail information of an Event in this page.</div>
   <div class="panel-body">
-    <form class="form-horizontal" *ngIf=employee>
+    <form class="form-horizontal" *ngIf=event>
   <div class="form-group">
-    <label for="emp_name" class="col-sm-2 control-label">Employee's Full Name : </label>
+    <label for="emp_name" class="col-sm-2 control-label">Event Name: </label>
     <div class="col-sm-9">
-      <p class="form-control">{{employee.name}}</p> 
+      <p class="form-control">{{event.name}}</p> 
     </div>
   </div>
   <div class="form-group">
-    <label for="position" class="col-sm-2 control-label">Job Position : </label>
+    <label for="position" class="col-sm-2 control-label">Description : </label>
     <div class="col-sm-9">
-     <p class="form-control">{{employee.position}}</p>
+     <p class="form-control">{{event.description}}</p>
     </div>
   </div>
   <div class="form-group">
-    <label for="department" class="col-sm-2 control-label">Department Name : </label>
+    <label for="department" class="col-sm-2 control-label">Class Name : </label>
     <div class="col-sm-9">
-     <p class="form-control">{{employee.department}}</p>
+     <p class="form-control">{{event.class}}</p>
     </div>
   </div>
   <div class="form-group">
-    <label for="salary" class="col-sm-2 control-label">Employee's Salary : </label>
+    <label for="salary" class="col-sm-2 control-label">Responsible Teacher : </label>
     <div class="col-sm-9">
-      <p class="form-control">{{employee.salary}}</p>
+      <p class="form-control">{{event.teacher}}</p>
     </div>
   </div>
   
   <div class="form-group">
-    <label for="id" class="col-sm-2 control-label">Employee's ID : </label>
+    <label for="id" class="col-sm-2 control-label">Event ID : </label>
     <div class="col-sm-9">
-      <p class="form-control">08df088d89dsfhjf87</p>
+      <p class="form-control">{{event._id}}</p>
     </div>
   </div>
   <div class="form-group">
