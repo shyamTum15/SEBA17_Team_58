@@ -12,6 +12,7 @@ import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import {EventService} from './event.service';
+import { EventOverviewComponent } from './eventoverview/eventoverview.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {EventService} from './event.service';
     HomeComponent,
     AddComponent,
     EditComponent,
-    ShowComponent
+    ShowComponent,
+    EventOverviewComponent
   ],
   imports: [
     BrowserModule,

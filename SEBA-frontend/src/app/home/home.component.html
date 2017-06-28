@@ -1,24 +1,23 @@
-<table class="table">
+<table class="table table-hover">
 		  <thead>
 			<tr>
 			  <td>Name</td>
 			  <td>Description</td>
 			  <td>Class</td>
-			  <td width="200" align="center">Teacher</td>
+			  <td>Teacher</td>
 			</tr>
 		  </thead>
 		  <tbody>
-			 <tr  *ngFor="let event of events">
-				<td>{{event.name}}</td>
+			 <tr routerLink="/eventoverview/{{event._id}}" *ngFor="let event of events" style="cursor:pointer">
+				<td >{{event.name}}</td>
 				<td>{{event.description}}</td>
 				<td>{{event.class}}</td>
 				<td>{{event.teacher}}</td>
-				<td width="270" style="margin-left: 50px "> 
-					<a class="btn btn-info" routerLink="/show/{{event._id}}">Detail</a> 
+				<td width="270" style="margin-left: 50px ">
+					<a class="btn btn-info" routerLink="/show/{{event._id}}">Detail</a>
 					<a class="btn btn-success"  routerLink="/edit/{{event._id}}">Edit</a>
 					<a class="btn btn-danger" (click)="deleteEvent(event._id)">Delete</a>
 				</td>
 			 </tr>
 		  </tbody>
 		</table>
-
