@@ -47,17 +47,17 @@ export class EditDescriptionComponent implements OnInit {
     document.getElementById("saveButton").style.display = "none";
     document.getElementById("cancelButton").style.display = "none";
     document.getElementById("textDescr").className="";
-    document.getElementById("textDescr").innerHTML = this.event.description;
+    document.getElementById("textDescr").innerHTML = this.event.infotext;
   }
 
-  /* Persists the new event description.
+  /* Persists the new event infotext.
   Transfers the description box back into an uneditable text field.
   Hides the save and cancel buttons and displays the edit buttons. */
   saveEdit() {
     var newDescr = document.getElementById("textDescr").innerHTML;
     var id = this.route.snapshot.params['id'];
     var model = this.event;
-    model.description = newDescr;
+    model.infotext = newDescr;
     this.eventService.updateEvent(id, model).subscribe();
     document.getElementById("textDescr").className="";
     document.getElementById("editButton").style.display = '';

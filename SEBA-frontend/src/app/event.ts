@@ -3,4 +3,5 @@ export class Event{
 	description: string;
 	class: string;
 	teacher: string
+	infotext: string;
 }

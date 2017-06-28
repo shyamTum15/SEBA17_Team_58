@@ -1,1 +1,1 @@
-db.events.insert({"name":"School Trip Event","description":"School Trip","class":"3A","teacher":"Maria Probst"})
+db.events.insert({"name":"School Trip Event","description":"School Trip","class":"3A","teacher":"Maria Probst",infotext:"Lorem Ipsum"})
