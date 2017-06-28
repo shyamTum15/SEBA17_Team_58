@@ -13,6 +13,7 @@ import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import {EventService} from './event.service';
 import { EventOverviewComponent } from './eventoverview/eventoverview.component';
+import { EditDescriptionComponent } from './editdescription/editdescription.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EventOverviewComponent } from './eventoverview/eventoverview.component'
     AddComponent,
     EditComponent,
     ShowComponent,
-    EventOverviewComponent
+    EventOverviewComponent,
+    EditDescriptionComponent
   ],
   imports: [
     BrowserModule,
