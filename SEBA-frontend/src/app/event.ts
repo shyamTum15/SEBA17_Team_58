@@ -6,6 +6,7 @@ export class Event{
 	infotext: string;
 	status: Array<string>;
 	cost: Array<string>;
+	packing: Array<string>;
 }
 
 /* the cost information consists of an array containing:
