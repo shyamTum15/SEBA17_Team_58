@@ -12,8 +12,11 @@ import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import {EventService} from './event.service';
+import {UserService} from './user.service';
 import { EventOverviewComponent } from './eventoverview/eventoverview.component';
 import { EditDescriptionComponent } from './editdescription/editdescription.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { EditDescriptionComponent } from './editdescription/editdescription.comp
     EditComponent,
     ShowComponent,
     EventOverviewComponent,
-    EditDescriptionComponent
+    EditDescriptionComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import { EditDescriptionComponent } from './editdescription/editdescription.comp
     HttpModule,
     FormsModule
   ],
-  providers: [EventService],
+  providers: [EventService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

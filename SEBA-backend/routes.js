@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Event = require('./model');
+var User = require('./modelUser');
 
 router.get('/',function(req,res){
      Event.getEvents(function(err,events){
