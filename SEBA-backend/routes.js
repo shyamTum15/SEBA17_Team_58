@@ -16,7 +16,8 @@ router.post('/',function(req,res){
 	    class: req.body.class,
 	    teacher: req.body.teacher,
       infotext: req.body.infotext,
-      status: req.body.status
+      status: req.body.status,
+      cost: req.body.cost
 	}
      Event.addEvent(newEvent,function(err,events){
      	if(err) throw err;
@@ -31,7 +32,8 @@ router.put('/:_id',function(req,res){
 	    class: req.body.class,
 	    teacher: req.body.teacher,
       infotext: req.body.infotext,
-      status: req.body.status
+      status: req.body.status,
+      cost: req.body.cost
 	}
      Event.updateEvent(req.params._id,updateVal,function(err,events){
      	if(err) throw err;

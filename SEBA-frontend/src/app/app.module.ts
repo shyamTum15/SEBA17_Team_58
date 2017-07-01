@@ -15,7 +15,7 @@ import {EventService} from './event.service';
 import { EventOverviewComponent } from './eventoverview/eventoverview.component';
 import { EditDescriptionComponent } from './editdescription/editdescription.component';
 import { PlanStatusComponent } from './planstatus/planstatus.component';
-
+import {CostComponent} from './cost/cost.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { PlanStatusComponent } from './planstatus/planstatus.component';
     ShowComponent,
     EventOverviewComponent,
     EditDescriptionComponent,
-    PlanStatusComponent
+    PlanStatusComponent,
+    CostComponent
   ],
   imports: [
     BrowserModule,

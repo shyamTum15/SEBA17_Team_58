@@ -5,7 +5,8 @@ var eventSchema = new mongoose.Schema({
 	class: String,
 	teacher: String,
 	infotext: String,
-	status: Array
+	status: Array,
+	cost: Array
 })
 
 var Event = module.exports = mongoose.model('event',eventSchema);

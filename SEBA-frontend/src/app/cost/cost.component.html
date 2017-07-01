@@ -1,0 +1,16 @@
+<div *ngIf=event>
+  <h4> Cost and Paying </h4>
+
+  <div type="text" id="cost">{{event.cost[0]}}</div>
+  <button class="btn btn-primary btn-xs" id="editCostButton" type="submit" (click)="editCost(cost)">Edit</button>
+  <!-- TODO: Buttons only visible for teachers -->
+  <button class="btn btn-success btn-xs" id="saveCostButton" style="display:none" (click)="saveCostEdit()">Save</button>
+  <button class="btn btn-danger btn-xs" id="cancelCostButton" style="display:none" (click)="cancelCostEdit()">Cancel</button>
+
+  <div type="text" id="costDescr">{{event.cost[1]}}</div>
+  <button class="btn btn-primary btn-xs" id="editDescrButton" type="submit" (click)="editDescr()">Edit</button>
+  <!-- TODO: Buttons only visible for teachers -->
+  <button class="btn btn-success btn-xs" id="saveDescrButton" style="display:none" (click)="saveDescrEdit()">Save</button>
+  <button class="btn btn-danger btn-xs" id="cancelDescrButton" style="display:none" (click)="cancelDescrEdit()">Cancel</button>
+
+</div>
