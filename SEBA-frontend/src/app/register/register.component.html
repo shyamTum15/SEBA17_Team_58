@@ -1,0 +1,157 @@
+<head>
+<script src="jquery-3.2.1.min.js"></script>
+</head>
+
+<div class="container">
+	<div class="row">
+        
+        <form id="registrationForm" class="form-horizontal" (submit)="addUser()" data-toggle="validator" role="form" ng-submit="form.$valid && submit()">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Register Here</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Name</label>  
+  <div class="col-md-4">
+  <input id="name" name="name" placeholder="Insert your Name" class="form-control input-md" type="email" maxlength="10" [(ngModel)]="model.name" required #name="ngModel">
+  <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+  	<div [hidden]="!name.errors.required">
+  		Name is required
+  	</div>
+  	<div [hidden]="!name.errors.maxlength">
+  		Name must not exceed 10 chars
+  	</div>
+  </div>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="descrition">Description</label>  
+  <div class="col-md-4">
+  <input id="description" name="descrition" required placeholder="Insert your Descrition" class="form-control input-md" type="text" [(ngModel)]="model.description" #description="ngModel" maxlength="10">
+  <div *ngIf="description.errors && (description.dirty || name.touched)" class="alert alert-danger">
+  	<div [hidden]="!description.errors.required">
+  		Description is required
+  	</div>
+  	<div [hidden]="!description.errors.maxlength">
+  		Description must not exceed 10 chars
+  	</div>
+  </div>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">Email</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" required placeholder="Insert your Email" class="form-control input-md" type="email" [(ngModel)]="model.email" class="form-control" #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+  <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+  	<div [hidden]="!email.errors.required">
+  		Name is required
+  	</div>
+  	<div [hidden]="!email.errors.pattern">
+  		Please enter valid email id
+  	</div>
+  </div>
+  <span class="help-block"> </span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="password">Password</label>  
+  <div class="col-md-4">
+  <input id="password" name="password" placeholder="Insert your Password" class="form-control input-md" type="password" [(ngModel)]="model.password" required #password="ngModel" minlength="4">
+  <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+  	<div [hidden]="!password.errors.required">
+  		Password is required
+  	</div>
+  	<div [hidden]="!password.errors.minlength">
+  		Password must be of at least 4 chars
+  	</div>
+  </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<!--<div class="form-group">
+  <label class="col-md-4 control-label" for="password2">Confirm Password</label>  
+  <div class="col-md-4">
+  <input id="password2" name="password2" placeholder="Confirm your Password" class="form-control input-md" type="password" required #password2="ngModel">
+  <div *ngIf="password2.errors && (password2.dirty || password2.touched)" class="alert alert-danger">
+     <div [hidden]="password2==password">
+     	Confirm password must match with password
+     </div>
+  </div>
+  </div>
+</div>-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="password">Confirm your Password</label>  
+  <div class="col-md-4">
+  <input id="password1" name="password1" placeholder="Confirm your password" class="form-control input-md" type="password" [(ngModel)]="model.password1" required #password1="ngModel" minlength="4">
+  <div *ngIf="password1.errors && (password1.dirty || password1.touched)" class="alert alert-danger">
+  	 <div [hidden]="password == password1">
+  	 	Confirm password must match with password
+  	 </div>
+  </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="address">Address</label>  
+  <div class="col-md-4">
+  <input id="address" name="address" placeholder="Enter your address" class="form-control input-md" type="text" [(ngModel)]="model.address" required #address="ngModel" minlength="5" maxlength="20">
+  <div *ngIf="address.errors && (address.dirty || address.touched)" class="alert alert-danger">
+  	<div [hidden]="!address.errors.required">
+  		Address is required
+  	</div>
+  	<div [hidden]="!address.errors.minlength">
+  		Address must be of at least 5 chars
+  	</div>
+  	<div [hidden]="!address.errors.maxlength">
+  		Address must be of at most 20 chars
+  	</div>
+  </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"> </label>
+  <div class="col-md-4">
+    <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+  
+	</div>
+</div>
+
+<body>
+	<script type="text/javascript">
+		$(document).ready(function (){
+			console.log("I am in javascript");
+            var validator = $("#registrationForm").bootstrapValidator({
+                 fields :{
+                 	email : {
+                 		message: "Email address is required",
+                 		validators : {
+                 			notEmpty :{
+                 				message : "please enter value"
+                 			}
+                 		}
+                 	}
+                 }
+            });
+		});
+
+	</script>
+
+</body>

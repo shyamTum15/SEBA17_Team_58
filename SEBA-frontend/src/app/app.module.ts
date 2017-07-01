@@ -12,8 +12,11 @@ import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import {EventService} from './event.service';
+import {UserService} from './user.service';
 import { EventOverviewComponent } from './eventoverview/eventoverview.component';
 import { EditDescriptionComponent } from './editdescription/editdescription.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { PlanStatusComponent } from './planstatus/planstatus.component';
 import {CostComponent} from './cost/cost.component';
 import {PackingListComponent} from './packingList/packinglist.component';
@@ -28,6 +31,8 @@ import {ScheduleComponent} from './schedule/schedule.component';
     ShowComponent,
     EventOverviewComponent,
     EditDescriptionComponent,
+    LoginComponent,
+    RegisterComponent,
     PlanStatusComponent,
     CostComponent,
     PackingListComponent,
@@ -39,7 +44,7 @@ import {ScheduleComponent} from './schedule/schedule.component';
     HttpModule,
     FormsModule
   ],
-  providers: [EventService],
+  providers: [EventService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
