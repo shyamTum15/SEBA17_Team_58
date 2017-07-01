@@ -16,8 +16,8 @@ import { EventOverviewComponent } from './eventoverview/eventoverview.component'
 import { EditDescriptionComponent } from './editdescription/editdescription.component';
 import { PlanStatusComponent } from './planstatus/planstatus.component';
 import {CostComponent} from './cost/cost.component';
-import {PackingListComponent} from './packingList/packinglist.component'
-
+import {PackingListComponent} from './packingList/packinglist.component';
+import {ScheduleComponent} from './schedule/schedule.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import {PackingListComponent} from './packingList/packinglist.component'
     EditDescriptionComponent,
     PlanStatusComponent,
     CostComponent,
-    PackingListComponent
+    PackingListComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
