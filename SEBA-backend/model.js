@@ -4,7 +4,10 @@ var eventSchema = new mongoose.Schema({
 	description: String,
 	class: String,
 	teacher: String,
-	infotext: String
+	infotext: String,
+	status: Array,
+	cost: Array,
+	packing: Array
 })
 
 var Event = module.exports = mongoose.model('event',eventSchema);

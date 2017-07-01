@@ -47,6 +47,7 @@ export class EditDescriptionComponent implements OnInit {
     document.getElementById("saveButton").style.display = "none";
     document.getElementById("cancelButton").style.display = "none";
     document.getElementById("textDescr").className="";
+    document.getElementById("textDescr").setAttribute("contenteditable", "false");
     document.getElementById("textDescr").innerHTML = this.event.infotext;
   }
 
@@ -60,6 +61,7 @@ export class EditDescriptionComponent implements OnInit {
     model.infotext = newDescr;
     this.eventService.updateEvent(id, model).subscribe();
     document.getElementById("textDescr").className="";
+    document.getElementById("textDescr").setAttribute("contenteditable", "false");
     document.getElementById("editButton").style.display = '';
     document.getElementById("saveButton").style.display = "none";
     document.getElementById("cancelButton").style.display = "none";

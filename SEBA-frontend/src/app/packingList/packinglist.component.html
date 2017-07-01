@@ -1,0 +1,11 @@
+<h4>Don't forget to bring:</h4>
+<div id="packinglist" *ngFor="let item of event.packing">
+  <ul>
+    <li>{{item}}</li>
+  </ul>
+</div>
+<!-- input field + add-button to add other items to the list-->
+<form class="input-append">
+  <input type="text" id="newPackingItem">
+  <button class="btn btn-primary btn-xs" (click)="addPackingItem()">Add</button>
+</form>

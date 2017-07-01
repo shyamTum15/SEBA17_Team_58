@@ -14,7 +14,6 @@ import { RegisterComponent } from './register/register.component';
 import {EventService} from './event.service';
 import {UserService} from './user.service';
 import { EventOverviewComponent } from './eventoverview/eventoverview.component';
-/* import { EditDescriptionComponent } from './editdescription/editdescription.component'; */
 
 const routes:Routes = [
   // {path:'',redirectTo:'/home', pathMatch:'full'},

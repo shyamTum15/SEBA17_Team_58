@@ -15,8 +15,14 @@ import {EventService} from './event.service';
 import {UserService} from './user.service';
 import { EventOverviewComponent } from './eventoverview/eventoverview.component';
 import { EditDescriptionComponent } from './editdescription/editdescription.component';
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+=======
+import { PlanStatusComponent } from './planstatus/planstatus.component';
+import {CostComponent} from './cost/cost.component';
+import {PackingListComponent} from './packingList/packinglist.component'
+>>>>>>> 47de97a3bdeb9e91ae9b2c7ee48767fcf63a5e51
 
 @NgModule({
   declarations: [
@@ -28,8 +34,14 @@ import { RegisterComponent } from './register/register.component';
     ShowComponent,
     EventOverviewComponent,
     EditDescriptionComponent,
+<<<<<<< HEAD
     LoginComponent,
     RegisterComponent
+=======
+    PlanStatusComponent,
+    CostComponent,
+    PackingListComponent
+>>>>>>> 47de97a3bdeb9e91ae9b2c7ee48767fcf63a5e51
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<!-- TODO: transform event.status into a list -->
+<h4>Planning Status</h4>
+<div id="packinglist" *ngFor="let item of event.status">
+  <ul>
+    <li>{{item}}</li>
+  </ul>
+</div>
+
+<!-- input field + add-button to add other items to the list-->
+<form class="input-append">
+  <input type="text" id="newItem">
+  <button class="btn btn-primary btn-xs" type="submit" (click)="addStatus()">Add</button>
+</form>
