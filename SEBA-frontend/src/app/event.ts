@@ -4,4 +4,5 @@ export class Event{
 	class: string;
 	teacher: string
 	infotext: string;
+	status: Array<string>;
 }
