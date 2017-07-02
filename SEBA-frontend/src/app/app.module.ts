@@ -19,7 +19,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PlanStatusComponent } from './planstatus/planstatus.component';
 import {CostComponent} from './cost/cost.component';
-import {PackingListComponent} from './packingList/packinglist.component'
+import {PackingListComponent} from './packingList/packinglist.component';
+import {AppGlobals} from './app-routing.module';
+import { Injectable } from "@angular/core";
+import { Inject } from "@angular/core";
 
 @NgModule({
   declarations: [
@@ -43,7 +46,7 @@ import {PackingListComponent} from './packingList/packinglist.component'
     HttpModule,
     FormsModule
   ],
-  providers: [EventService,UserService],
+  providers: [EventService,UserService,AppGlobals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

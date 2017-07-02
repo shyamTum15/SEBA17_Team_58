@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
-var flash = require('connect-flash');
+const flash = require('connect-flash');
 var exphbs = require('express-handlebars');
 var expressValidator = require('express-validator');
 var localStrategy = require('passport');
@@ -60,6 +60,7 @@ app.use('/api/events',router);
 app.use('/api/users',routerUser);
 app.use(cookieParser());
 
+
 app.listen(port, function(){
 	console.log("server is running on port "+ port);
 })
@@ -71,7 +72,6 @@ app.use(session({
 	resave: true
 }));
 
-
 ///Connect Flash middleware
 app.use(flash());
 
@@ -80,5 +80,6 @@ app.use(function(req,res,next){
 	res.locals.success_msg = req.flash('success_msg');
 	res.locals.error_msg = req.flash('error_msg');
 	res.locals.error = req.flash('error');
+	res.locals.user = req.user || null;
 	next();
 })

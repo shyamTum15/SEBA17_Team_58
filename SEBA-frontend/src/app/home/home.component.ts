@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import {UserService} from '../user.service';
+import {User} from '../user';
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
+import {AppGlobals} from '../app-routing.module';
+import { Inject } from "@angular/core";
+
 import {EventService} from '../event.service';
 import {Event} from '../event';
 
@@ -13,7 +23,12 @@ export class HomeComponent implements OnInit {
 
   constructor(
 
-     public eventService: EventService
+     public userService:UserService,
+     public eventService:EventService,
+     public route:ActivatedRoute,
+     public router:Router,
+     // @Inject(AppGlobals) appglobals: AppGlobals
+     // public appglobals: AppGlobals
   	) { }
 
   ngOnInit() {
