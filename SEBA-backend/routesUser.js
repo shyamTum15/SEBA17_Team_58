@@ -86,7 +86,7 @@ router.post('/login',
        // res.json(user);
        }else{
        console.log ("user fetched ",user);
-       User.comparePassword(user.password,req.body.password,function(err,isMatch){
+       User.comparePassword(req.body.password,user.password,function(err,isMatch){
         if (err) {
           user =null;
           console.log(err);}

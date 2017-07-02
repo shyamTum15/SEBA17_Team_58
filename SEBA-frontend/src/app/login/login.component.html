@@ -15,7 +15,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="email">Email</label>  
   <div class="col-md-4">
-  <input id="email" name="email" required placeholder="Insert your Email" class="form-control input-md" type="email" [(ngModel)]="model.email" class="form-control" #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+  <input id="email" name="email" required placeholder="Insert your Email" class="form-control input-md" type="email" [(ngModel)]="model.email" #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
   <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
   	<div [hidden]="!email.errors.required">
   		Name is required

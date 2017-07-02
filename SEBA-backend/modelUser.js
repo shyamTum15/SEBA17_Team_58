@@ -4,7 +4,7 @@ var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSalt();
 var userSchema = new mongoose.Schema({
 	name: String,
-	role: String,
+	description: String,
 	email: String,
 	password: String,
 	address: String
@@ -17,6 +17,7 @@ module.exports.getUsers = function(callback){
 }
 
 module.exports.addUser = function(newUser,callback){
+	console.log("got the user ",newUser);
 	bcrypt.genSalt(10, function(err, salt) {
     bcrypt.hash(newUser.password, salt, function(err, hash) {
         newUser.password = hash;
@@ -52,12 +53,12 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
 	bcrypt.compare(candidatePassword, hash, function(err, res) {
 	   console.log("I am in bcrypt candidatePassword ",candidatePassword);
 	   console.log("I am in bcrypt hash",hash);
-	   if(candidatePassword==hash){
-	   	res=true;
-	   }
-	   else{
-	   	res=false;
-	   }
+	   // if(candidatePassword==hash){
+	   // 	res=true;
+	   // }
+	   // else{
+	   // 	res=false;
+	   // }
        // if(err) throw err;
        // if (res){
        // 	return true; 

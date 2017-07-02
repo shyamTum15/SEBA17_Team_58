@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   model = new User();
   addUser(){
   	this.userService.addUser(this.model)
-  	     .subscribe(()=>this.goBack())
+  	     .subscribe(()=>this.goLogin())
   }
 
 
@@ -40,21 +40,26 @@ export class LoginComponent implements OnInit {
   	     // .subscribe(()=>this.goBack())
   	     .subscribe(user=>{
   	      	this.model  = user;
-  	      	console.log("Fetched value in front end ",this.model);
+  	      	console.log("Fetched value in front end ",JSON.stringify(user));
 
   	      	if(this.model!=null){
               this.appglobals.setLoginStatus(true);
               this.appglobals.setUserGlobal(this.model);
               console.log("Value stored for user in global: ",this.appglobals.getUserGlobal());
-  	      	  this.goBack();
+  	      	  this.goHome();
   	      } else{
   	      	alert("Email or Password is incorrect");
+  	      	window.location.reload(); 
   	      }
   	   })
   }
 
-  goBack(){
+  goHome(){
    	this.router.navigate(['/home']);
+   }
+
+   goLogin(){
+   	this.router.navigate(['/login']);
    }
 
 }
