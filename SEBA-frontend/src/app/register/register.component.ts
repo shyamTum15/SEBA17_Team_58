@@ -6,6 +6,9 @@ import {UserService} from '../user.service';
 import {User} from '../user';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
+import {AppGlobals} from '../app-routing.module';
+import { Inject } from "@angular/core";
+import {forwardRef} from "@angular/core";
 
 @Component({
   selector: 'app-register',
@@ -17,7 +20,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     public userService:UserService,
     public route:ActivatedRoute,
-    public router:Router
+    public router:Router,
+    @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals
   	) { }
 
   ngOnInit() {
@@ -39,7 +43,9 @@ export class RegisterComponent implements OnInit {
   }
 
   goBack(){
-   	this.router.navigate(['/home']);
+  	this.appglobals.setRegistrationStatus(true);
+  	alert("You are registered");
+   	this.router.navigate(['/login']);
    }
 
 }

@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     console.log("within function ngOnInit getEvents = ", this.getEvents());
     if(this.appglobals.getUserGlobal()!=null){
       console.log("from home user ",this.appglobals.getUserGlobal());
-  	this.getEvents();
+  	  this.getEvents();
   }
  }
   events:Event;

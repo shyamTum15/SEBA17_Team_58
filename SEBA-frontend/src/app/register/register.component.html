@@ -29,15 +29,15 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="descrition">Description</label>  
+  <label class="col-md-4 control-label" for="descrition">Role</label>  
   <div class="col-md-4">
-  <input id="description" name="descrition" required placeholder="Insert your Descrition" class="form-control input-md" type="text" [(ngModel)]="model.description" #description="ngModel" maxlength="10">
-  <div *ngIf="description.errors && (description.dirty || name.touched)" class="alert alert-danger">
-  	<div [hidden]="!description.errors.required">
-  		Description is required
+  <input id="description" name="role" required placeholder="Insert your Role" class="form-control input-md" type="text" [(ngModel)]="model.role" #role="ngModel" maxlength="10">
+  <div *ngIf="role.errors && (role.dirty || name.touched)" class="alert alert-danger">
+  	<div [hidden]="!role.errors.required">
+  		Role is required
   	</div>
-  	<div [hidden]="!description.errors.maxlength">
-  		Description must not exceed 10 chars
+  	<div [hidden]="!role.errors.maxlength">
+  		role must not exceed 10 chars
   	</div>
   </div>  
   </div>
@@ -76,18 +76,6 @@
   </div>
 </div>
 
-<!-- Text input-->
-<!--<div class="form-group">
-  <label class="col-md-4 control-label" for="password2">Confirm Password</label>  
-  <div class="col-md-4">
-  <input id="password2" name="password2" placeholder="Confirm your Password" class="form-control input-md" type="password" required #password2="ngModel">
-  <div *ngIf="password2.errors && (password2.dirty || password2.touched)" class="alert alert-danger">
-     <div [hidden]="password2==password">
-     	Confirm password must match with password
-     </div>
-  </div>
-  </div>
-</div>-->
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="password">Confirm your Password</label>  

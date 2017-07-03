@@ -4,7 +4,7 @@ var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSalt();
 var userSchema = new mongoose.Schema({
 	name: String,
-	description: String,
+	role: String,
 	email: String,
 	password: String,
 	address: String

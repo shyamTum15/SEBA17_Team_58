@@ -42,6 +42,7 @@ export class AppGlobals {
     
   // }
   public isUserLoggedIn:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isregistered:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public user;
   setLoginStatus(isLoggedIn){
@@ -51,11 +52,20 @@ export class AppGlobals {
   getLoginStatus(){
     return this.isUserLoggedIn;
   }
+
   setUserGlobal(User){
     this.user = User;
   }
   getUserGlobal(){
     return this.user;
+  }
+
+  setRegistrationStatus(isregistered){
+   // this.isUserLoggedIn.next(isLoggedIn);
+   this.isregistered = isregistered;
+  }
+  getRegistrationStatus(){
+    return this.isregistered;
   }
 }
 

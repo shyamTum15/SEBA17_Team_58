@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
   	      	if(this.model!=null){
               this.appglobals.setLoginStatus(true);
               this.appglobals.setUserGlobal(this.model);
+              this.appglobals.setRegistrationStatus(false);
               console.log("Value stored for user in global: ",this.appglobals.getUserGlobal());
   	      	  this.goHome();
   	      } else{
@@ -55,6 +56,7 @@ export class LoginComponent implements OnInit {
   }
 
   goHome(){
+
    	this.router.navigate(['/home']);
    }
 
