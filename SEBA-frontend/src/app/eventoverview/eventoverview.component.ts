@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {EventService} from '../event.service';
 import {Event} from '../event';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-eventoverview',
@@ -14,7 +15,7 @@ export class EventOverviewComponent implements OnInit {
   constructor(
       public eventService:EventService,
       public route:ActivatedRoute,
-      public router:Router
+      public router:Router,
   	) { }
 
   ngOnInit() {
@@ -33,4 +34,5 @@ export class EventOverviewComponent implements OnInit {
    goBack(){
    	this.router.navigate(['/home']);
    }
+
 }

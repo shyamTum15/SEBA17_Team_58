@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EventService} from '../event.service';
 import {Event} from '../event';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {AppGlobals} from '../app-routing.module';
 
 @Component({
   selector: 'app-editdescription',
@@ -13,7 +14,8 @@ export class EditDescriptionComponent implements OnInit {
   constructor(
     public eventService: EventService,
     public route: ActivatedRoute,
-    public router: Router
+    public router: Router,
+     public appglobals: AppGlobals
   ) { }
 
   ngOnInit() {
@@ -65,6 +67,17 @@ export class EditDescriptionComponent implements OnInit {
     document.getElementById("editButton").style.display = '';
     document.getElementById("saveButton").style.display = "none";
     document.getElementById("cancelButton").style.display = "none";
+  }
+
+  hideWhenParent(){
+    if(this.appglobals.getUserGlobal().description.toString()=="Teacher"){
+      return true;
+    }
+    if(this.appglobals.getUserGlobal().description.toString()=="Parent"){
+      return false;
+    } else {
+      return false;
+    }
   }
 
 }

@@ -5,7 +5,7 @@
   </ul>
 </div>
 <!-- input field + add-button to add other items to the list-->
-<form class="input-append">
-  <input type="text" id="newPackingItem">
+<form class="input-append" *ngIf="hideWhenParent()">
+  <input type="text" id="newPackingItem" >
   <button class="btn btn-primary btn-xs" (click)="addPackingItem()">Add</button>
 </form>

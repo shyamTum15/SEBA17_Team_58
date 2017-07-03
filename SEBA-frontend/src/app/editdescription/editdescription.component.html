@@ -1,8 +1,5 @@
-  <div *ngIf=event>
-    <h3> General Information </h3>
+    <h3> General Information  for {{appglobals.getUserGlobal().description}}</h3>
     <div class="" id="textDescr"> {{event.infotext}} </div>
-    <!-- TODO: Edit Button only visible for teachers -->
-    <button id="editButton" class="btn btn-primary" (click)="editText()">Edit</button>
-    <button id="saveButton" class="btn btn-success" style="display:none" (click)="saveEdit()">Save</button>
-    <button id="cancelButton" class="btn btn-danger" style="display:none" (click)="cancelEdit()">Cancel</button>
-  </div>
+    <button id="editButton" class="btn btn-primary" *ngIf="hideWhenParent()" (click)="editText()">Edit</button>
+    <button id="saveButton" class="btn btn-success" *ngIf="hideWhenParent()" style="display:none" (click)="saveEdit()">Save</button>
+    <button id="cancelButton" class="btn btn-danger" *ngIf="hideWhenParent()" style="display:none" (click)="cancelEdit()">Cancel</button>

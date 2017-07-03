@@ -7,7 +7,7 @@
 </div>
 
 <!-- input field + add-button to add other items to the list-->
-<form class="input-append">
+<form class="input-append" *ngIf="hideWhenParent()">
   <input type="text" id="newItem">
   <button class="btn btn-primary btn-xs" type="submit" (click)="addStatus()">Add</button>
 </form>

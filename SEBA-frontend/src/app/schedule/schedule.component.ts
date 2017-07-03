@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EventService} from '../event.service';
 import {Event} from '../event';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {AppGlobals} from '../app-routing.module';
 
 @Component({
   selector: 'app-schedule',
@@ -13,7 +14,8 @@ export class ScheduleComponent implements OnInit {
   constructor(
     public eventService: EventService,
     public route: ActivatedRoute,
-    public router: Router
+    public router: Router,
+    public appglobals: AppGlobals
   ) { }
 
   ngOnInit() {
@@ -66,5 +68,14 @@ export class ScheduleComponent implements OnInit {
     document.getElementById("saveScheduleButton").style.display = "none";
     document.getElementById("cancelScheduleButton").style.display = "none";
   }
-
+  hideWhenParent(){
+    if(this.appglobals.getUserGlobal().description.toString()=="Teacher"){
+      return true;
+    }
+    if(this.appglobals.getUserGlobal().description.toString()=="Parent"){
+      return false;
+    } else {
+      return false;
+    }
+  }
 }
