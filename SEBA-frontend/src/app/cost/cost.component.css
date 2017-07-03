@@ -1,4 +1,12 @@
 #cost {
   float: left;
   margin-right: 15px;
+  width: auto;
+  height: auto;
+  color: black;
+  font-size: 22px;
+}
+
+#costDescr{
+  color: black;
 }

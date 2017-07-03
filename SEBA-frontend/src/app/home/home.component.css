@@ -1,0 +1,9 @@
+/* defines the background color when hovering on table items */
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgba(52,58,78,0.8);
+}
+
+/* removes the blue border around table cells when clicked */
+ td {
+   outline:none;
+ }
