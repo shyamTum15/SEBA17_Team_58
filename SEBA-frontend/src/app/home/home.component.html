@@ -8,11 +8,11 @@
 			</tr>
 		  </thead>
 		  <tbody>
-			 <tr routerLink="/eventoverview/{{event._id}}" *ngFor="let event of events" style="cursor:pointer">
-				<td >{{event.name}}</td>
-				<td>{{event.description}}</td>
-				<td>{{event.class}}</td>
-				<td>{{event.teacher}}</td>
+			 <tr *ngFor="let event of events" style="cursor:pointer">
+				<td routerLink="/eventoverview/{{event._id}}">{{event.name}}</td>
+				<td routerLink="/eventoverview/{{event._id}}">{{event.description}}</td>
+				<td routerLink="/eventoverview/{{event._id}}">{{event.class}}</td>
+				<td routerLink="/eventoverview/{{event._id}}">{{event.teacher}}</td>
 				<td width="270" style="margin-left: 50px ">
 					<a class="btn btn-info" routerLink="/show/{{event._id}}">Detail</a>
 					<a class="btn btn-success"  routerLink="/edit/{{event._id}}">Edit</a>
