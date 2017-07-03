@@ -1,3 +1,60 @@
-<p>
-  login works!
-</p>
+<head>
+<script src="jquery-3.2.1.min.js"></script>
+</head>
+
+<div class="container">
+	<div class="row">
+        
+        <form id="registrationForm" class="form-horizontal" (submit)="authenticateUser()" data-toggle="validator" role="form" ng-submit="form.$valid && submit()">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Login Here</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">Email</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" required placeholder="Insert your Email" class="form-control input-md" type="email" [(ngModel)]="model.email" #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+  <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+  	<div [hidden]="!email.errors.required">
+  		Name is required
+  	</div>
+  	<div [hidden]="!email.errors.pattern">
+  		Please enter valid email id
+  	</div>
+  </div>
+  <span class="help-block"> </span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="password">Password</label>  
+  <div class="col-md-4">
+  <input id="password" name="password" placeholder="Insert your Password" class="form-control input-md" type="password" [(ngModel)]="model.password" required #password="ngModel" minlength="4">
+  <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+  	<div [hidden]="!password.errors.required">
+  		Password is required
+  	</div>
+  	<div [hidden]="!password.errors.minlength">
+  		Password must be of at least 4 chars
+  	</div>
+  </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"> </label>
+  <div class="col-md-4">
+    <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+  
+	</div>
+</div>
+

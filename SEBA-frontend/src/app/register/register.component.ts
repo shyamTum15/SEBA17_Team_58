@@ -33,6 +33,7 @@ export class RegisterComponent implements OnInit {
   }
 
   addUser(){
+  	console.log("user to be sent ",this.model);
   	this.userService.addUser(this.model)
   	     .subscribe(()=>this.goBack())
   }
