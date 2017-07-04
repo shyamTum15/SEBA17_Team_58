@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
-const flash = require('connect-flash');
+var flash = require('connect-flash');
 var exphbs = require('express-handlebars');
 var expressValidator = require('express-validator');
 var localStrategy = require('passport');
@@ -26,6 +26,7 @@ app.get('/',function(req,res){
 });
 var router = require('./routes');
 var routerUser = require('./routesUser');
+var routerStudent = require('./routesStudent');
 
 //middleware 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -58,6 +59,7 @@ app.use(expressValidator({
 
 app.use('/api/events',router);
 app.use('/api/users',routerUser);
+app.use('/api/students',routerStudent);
 app.use(cookieParser());
 
 

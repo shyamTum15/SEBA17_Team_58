@@ -24,6 +24,7 @@ import {AppGlobals} from './app-routing.module';
 import { Injectable } from "@angular/core";
 import { Inject } from "@angular/core";
 import {ScheduleComponent} from './schedule/schedule.component';
+import { SendEventComponent } from './send-event/send-event.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import {ScheduleComponent} from './schedule/schedule.component';
     PlanStatusComponent,
     CostComponent,
     PackingListComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    SendEventComponent
   ],
   imports: [
     BrowserModule,
