@@ -1,0 +1,17 @@
+<h4>Comments</h4>
+
+<div id="newComment">
+  <div class="form-group">
+    <label for="comment">Leave a comment:</label>
+    <textarea class="form-control" rows="2" id="comment"></textarea>
+  </div>
+  <button class="btn btn-primary btn-btn-xs" (click)="addComment()">Send</button>
+</div>
+
+<div id="commentDisplay">
+<div *ngFor="let comment of event.comments">
+  <ul id="commentList">
+    <li> {{comment}} </li>
+  </ul>
+</div>
+</div>

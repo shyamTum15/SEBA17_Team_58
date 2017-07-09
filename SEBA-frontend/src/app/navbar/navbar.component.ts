@@ -9,7 +9,6 @@ import {FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular
 import {AppGlobals} from '../app-routing.module';
 import { Inject } from "@angular/core";
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

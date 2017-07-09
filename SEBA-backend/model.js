@@ -8,7 +8,8 @@ var eventSchema = new mongoose.Schema({
 	status: Array,
 	cost: Array,
 	packing: Array,
-	schedule: String
+	schedule: String,
+	comments: Array
 })
 
 var Event = module.exports = mongoose.model('event',eventSchema);

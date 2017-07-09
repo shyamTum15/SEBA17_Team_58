@@ -1,0 +1,17 @@
+li {
+    list-style-type: none;
+    padding: 3%;
+    background-color: rgba(255,255,255,0.2);
+    max-width: 100%;
+}
+
+ul {
+  margin-top: 2%;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+#commentDisplay{
+max-height: 400px !important;
+overflow: scroll;
+}

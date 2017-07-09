@@ -8,6 +8,7 @@ export class Event{
 	cost: Array<string>;
 	packing: Array<string>;
 	schedule: string;
+	comments: Array<string>;
 }
 
 /* the cost information consists of an array containing:
