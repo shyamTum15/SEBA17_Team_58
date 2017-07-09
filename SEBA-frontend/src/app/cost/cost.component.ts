@@ -50,6 +50,7 @@ export class CostComponent implements OnInit {
   saveCostEdit() {
     var newCost = document.getElementById("cost").innerHTML;
     var id = this.route.snapshot.params['id'];
+    this.getEvent();
     var model = this.event;
     model.cost[0] = newCost;
     this.eventService.updateEvent(id, model).subscribe();
@@ -80,6 +81,7 @@ export class CostComponent implements OnInit {
   saveDescrEdit() {
     var newCost = document.getElementById("costDescr").innerHTML;
     var id = this.route.snapshot.params['id'];
+    this.getEvent();
     var model = this.event;
     model.cost[1] = newCost;
     this.eventService.updateEvent(id, model).subscribe();

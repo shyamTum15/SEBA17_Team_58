@@ -59,6 +59,7 @@ export class EditDescriptionComponent implements OnInit {
   saveEdit() {
     var newDescr = document.getElementById("textDescr").innerHTML;
     var id = this.route.snapshot.params['id'];
+    this.getEvent();
     var model = this.event;
     model.infotext = newDescr;
     this.eventService.updateEvent(id, model).subscribe();

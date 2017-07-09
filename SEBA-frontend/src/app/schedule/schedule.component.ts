@@ -59,6 +59,7 @@ export class ScheduleComponent implements OnInit {
   saveScheduleEdit() {
     var newDescr = document.getElementById("scheduleText").innerHTML;
     var id = this.route.snapshot.params['id'];
+    this.getEvent();
     var model = this.event;
     model.schedule = newDescr;
     this.eventService.updateEvent(id, model).subscribe();

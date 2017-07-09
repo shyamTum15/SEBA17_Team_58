@@ -36,6 +36,7 @@ export class PackingListComponent implements OnInit {
   addPackingItem() {
     var newItem = (<HTMLInputElement>document.getElementById("newPackingItem")).value;
     if (newItem != null || newItem != "") {
+      this.getEvent();
       var model = this.event;
       var id = this.route.snapshot.params['id'];
       model.packing.push(newItem);
