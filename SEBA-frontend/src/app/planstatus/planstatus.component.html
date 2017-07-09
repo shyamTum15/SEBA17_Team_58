@@ -1,7 +1,7 @@
 <h4>Planning Status</h4>
-<div id="packinglist" *ngFor="let item of event.status">
+<div id="packinglist" *ngFor="let item of event.status; let i = index" [attr.data-index]="i">
   <ul>
-    <li>{{item}} <button class="btn btn-xs btn-danger" (click)="remove(item)" *ngIf="hideWhenParent()">Remove</button></li>
+    <li> {{i}}{{item}} <button class="btn btn-xs btn-danger" (click)="remove(i)" *ngIf="hideWhenParent()">Remove</button></li>
   </ul>
 </div>
 

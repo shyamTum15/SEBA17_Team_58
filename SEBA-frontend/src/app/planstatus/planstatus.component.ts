@@ -56,11 +56,11 @@ export class PlanStatusComponent implements OnInit {
     }
   }
 
-  remove(item) {
+  remove(i) {
+    this.getEvent();
     var model = this.event;
     var id = this.route.snapshot.params['id'];
-    var index = model.status.findIndex(item);
-    model.status.splice(index,1,"works");
+    model.status.splice(i, 1);
     this.eventService.updateEvent(id, model).subscribe();
   }
 }

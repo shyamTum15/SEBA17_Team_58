@@ -45,15 +45,23 @@ export class PackingListComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("newPackingItem")).value = "";
   }
 
-  hideWhenParent(){
-    if(this.appglobals.getUserGlobal().role.toString()=="Teacher"){
+  hideWhenParent() {
+    if (this.appglobals.getUserGlobal().role.toString() == "Teacher") {
       return true;
     }
-    if(this.appglobals.getUserGlobal().role.toString()=="Parent"){
+    if (this.appglobals.getUserGlobal().role.toString() == "Parent") {
       return false;
     } else {
       return false;
     }
+  }
+
+  remove(i) {
+    this.getEvent();
+    var model = this.event;
+    var id = this.route.snapshot.params['id'];
+    model.packing.splice(i, 1);
+    this.eventService.updateEvent(id, model).subscribe();
   }
 
 }
