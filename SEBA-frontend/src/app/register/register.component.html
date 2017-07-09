@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="row">
-        
+
         <form id="registrationForm" class="form-horizontal" (submit)="addUser()" data-toggle="validator" role="form" ng-submit="form.$valid && submit()">
 <fieldset>
 
@@ -13,24 +13,33 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="name">Name</label>  
+  <label class="col-md-4 control-label" for="name">Name</label>
   <div class="col-md-4">
-  <input id="name" name="name" placeholder="Insert your Name" class="form-control input-md" type="email" maxlength="10" [(ngModel)]="model.name" required #name="ngModel">
+  <input id="name" name="name" placeholder="Insert your Name" class="form-control input-md" type="email" maxlength="25" [(ngModel)]="model.name" required #name="ngModel">
   <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
   	<div [hidden]="!name.errors.required">
   		Name is required
   	</div>
   	<div [hidden]="!name.errors.maxlength">
-  		Name must not exceed 10 chars
+  		Name must not exceed 25 characters
   	</div>
-  </div>  
+  </div>
   </div>
 </div>
 
-<!-- Text input-->
+<!-- Dropdown Menu -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="descrition">Role</label>  
+  <label class="col-md-4 control-label" for="descrition">Role</label>
   <div class="col-md-4">
+<select class="form-control" id="descriptionDropdown" type="role" name="role" required [(ngModel)]="model.role" #role="ngModel" form="registrationForm">
+<option value="Parent" selected>Parent</option>
+<option value="Teacher">Teacher</option>
+</select>
+<div *ngIf="role.errors && (role.dirty || name.touched)" class="alert alert-danger">
+	<div [hidden]="!role.errors.required">
+		Role is required
+	</div> </div>
+<!--
   <input id="description" name="role" required placeholder="Insert your Role" class="form-control input-md" type="text" [(ngModel)]="model.role" #role="ngModel" maxlength="10">
   <div *ngIf="role.errors && (role.dirty || name.touched)" class="alert alert-danger">
   	<div [hidden]="!role.errors.required">
@@ -39,13 +48,13 @@
   	<div [hidden]="!role.errors.maxlength">
   		role must not exceed 10 chars
   	</div>
-  </div>  
+  </div> -->
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="email">Email</label>  
+  <label class="col-md-4 control-label" for="email">Email</label>
   <div class="col-md-4">
   <input id="email" name="email" required placeholder="Insert your Email" class="form-control input-md" type="email" [(ngModel)]="model.email" class="form-control" #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
   <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
@@ -56,13 +65,13 @@
   		Please enter valid email id
   	</div>
   </div>
-  <span class="help-block"> </span>  
+  <span class="help-block"> </span>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="password">Password</label>  
+  <label class="col-md-4 control-label" for="password">Password</label>
   <div class="col-md-4">
   <input id="password" name="password" placeholder="Insert your Password" class="form-control input-md" type="password" [(ngModel)]="model.password" required #password="ngModel" minlength="4">
   <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
@@ -78,7 +87,7 @@
 
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="password">Confirm your Password</label>  
+  <label class="col-md-4 control-label" for="password">Confirm your Password</label>
   <div class="col-md-4">
   <input id="password1" name="password1" placeholder="Confirm your password" class="form-control input-md" type="password" [(ngModel)]="model.password1" required #password1="ngModel" minlength="4">
   <div *ngIf="password1.errors && (password1.dirty || password1.touched)" class="alert alert-danger">
@@ -91,7 +100,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="address">Address</label>  
+  <label class="col-md-4 control-label" for="address">Address</label>
   <div class="col-md-4">
   <input id="address" name="address" placeholder="Enter your address" class="form-control input-md" type="text" [(ngModel)]="model.address" required #address="ngModel" minlength="5" maxlength="20">
   <div *ngIf="address.errors && (address.dirty || address.touched)" class="alert alert-danger">
@@ -118,7 +127,7 @@
 
 </fieldset>
 </form>
-  
+
 	</div>
 </div>
 

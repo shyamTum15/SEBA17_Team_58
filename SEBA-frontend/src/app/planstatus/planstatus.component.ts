@@ -30,9 +30,9 @@ export class PlanStatusComponent implements OnInit {
       })
   }
 
-/* Invoked when the add-button is clicked. Retrieves the user input
-from the input form and adds it to the status-array of the event.
-Resets the input-field after item has been added*/
+  /* Invoked when the add-button is clicked. Retrieves the user input
+  from the input form and adds it to the status-array of the event.
+  Resets the input-field after item has been added*/
   addStatus() {
     var newItem = (<HTMLInputElement>document.getElementById("newItem")).value;
     if (newItem != null || newItem != "") {
@@ -41,17 +41,25 @@ Resets the input-field after item has been added*/
       model.status.push(newItem);
       this.eventService.updateEvent(id, model).subscribe();
     }
-  (<HTMLInputElement>document.getElementById("newItem")).value = "";
+    (<HTMLInputElement>document.getElementById("newItem")).value = "";
   }
 
-  hideWhenParent(){
-    if(this.appglobals.getUserGlobal().description.toString()=="Teacher"){
+  hideWhenParent() {
+    if (this.appglobals.getUserGlobal().role.toString() == "Teacher") {
       return true;
     }
-    if(this.appglobals.getUserGlobal().description.toString()=="Parent"){
+    if (this.appglobals.getUserGlobal().role.toString() == "Parent") {
       return false;
     } else {
       return false;
     }
+  }
+
+  remove(item) {
+    var model = this.event;
+    var id = this.route.snapshot.params['id'];
+    var index = model.status.findIndex(item);
+    model.status.splice(index,1,"works");
+    this.eventService.updateEvent(id, model).subscribe();
   }
 }

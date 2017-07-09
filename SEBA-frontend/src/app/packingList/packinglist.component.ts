@@ -45,10 +45,10 @@ export class PackingListComponent implements OnInit {
   }
 
   hideWhenParent(){
-    if(this.appglobals.getUserGlobal().description.toString()=="Teacher"){
+    if(this.appglobals.getUserGlobal().role.toString()=="Teacher"){
       return true;
     }
-    if(this.appglobals.getUserGlobal().description.toString()=="Parent"){
+    if(this.appglobals.getUserGlobal().role.toString()=="Parent"){
       return false;
     } else {
       return false;
