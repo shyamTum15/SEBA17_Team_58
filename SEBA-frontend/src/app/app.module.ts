@@ -26,7 +26,8 @@ import { Inject } from "@angular/core";
 import {ScheduleComponent} from './schedule/schedule.component';
 import { SendEventComponent } from './send-event/send-event.component';
 import {BreadcrumbComponent} from './breadcrumb/breadcrumb.component';
-import {CommentBoxComponent} from './commentbox/commentbox.component'
+import {CommentBoxComponent} from './commentbox/commentbox.component';
+import { ShowUserComponent } from './show-user/show-user.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import {CommentBoxComponent} from './commentbox/commentbox.component'
     ScheduleComponent,
     SendEventComponent,
     BreadcrumbComponent,
-    CommentBoxComponent
+    CommentBoxComponent,
+    ShowUserComponent
   ],
   imports: [
     BrowserModule,

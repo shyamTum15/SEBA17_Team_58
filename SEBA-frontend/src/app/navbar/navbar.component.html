@@ -15,6 +15,7 @@
             <li id="nameOfUser" *ngIf="appglobals.getUserGlobal()"><h4>Logged in as: {{appglobals.getUserGlobal().name}} ({{appglobals.getUserGlobal().role}})</h4></li><li> </li>
             <li [routerLinkActive]="['active']" *ngIf="appglobals.getUserGlobal()"><a [routerLink]="['/home']">Home</a></li>
             <li [routerLinkActive]="['active']" *ngIf="appglobals.getUserGlobal()"><a [routerLink]="['/add']">Create Event</a></li>
+            <li [routerLinkActive]="['active']" *ngIf="appglobals.getUserGlobal()"><a [routerLink]="['/show-user/'+appglobals.getUserGlobal()._id]">User Profile</a></li>
             <li [routerLinkActive]="['active']" *ngIf="appglobals.getUserGlobal()==null"><a [routerLink]="['/login']">login</a></li>
             <li [routerLinkActive]="['active']" *ngIf="appglobals.getUserGlobal()==null"><a [routerLink]="['/register']">register</a></li>
             <li [routerLinkActive]="['active']" (click)="logOutUser()" *ngIf="appglobals.getUserGlobal()"><a [routerLink]="['/login']">logout</a></li>
