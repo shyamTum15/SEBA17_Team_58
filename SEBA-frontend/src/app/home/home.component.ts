@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
      public router:Router,
      // @Inject(AppGlobals) appglobals: AppGlobals
      // public appglobals: AppGlobals
-     @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals,
+     @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals
   	) { }
 
   ngOnInit() {

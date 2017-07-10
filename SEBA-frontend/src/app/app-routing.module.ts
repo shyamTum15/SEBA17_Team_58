@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
+import { SendEventComponent } from './send-event/send-event.component';
 import { ShowUserComponent } from './show-user/show-user.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -33,6 +34,7 @@ const routes:Routes = [
   {path:'edit/:id', component:EditComponent},
   {path:'show/:id', component:ShowComponent},
   {path:'show-user/:id', component:ShowUserComponent},
+  {path:'send-event/:id', component:SendEventComponent},
   {path:'eventoverview/:id', component:EventOverviewComponent}
   ];
 
