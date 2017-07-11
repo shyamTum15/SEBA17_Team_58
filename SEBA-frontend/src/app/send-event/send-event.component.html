@@ -5,21 +5,41 @@
             <label for="classNo">Class:</label>
             <input type="text" class="form-control" id="classNo" [(ngModel)]="model.class" name="classNo">
           </div>
-          <div class="form-group">
-            <label for="studentList">Student List:</label>
-            <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent"><p>{{student.name}}</p>
-          </div>
-          <!-- <div class="form-group">
-           <label for="studentList" class="col-sm-2 control-label">Student List: </label>
-             <div class="col-sm-9">
-                <p class="form-control">{{modelStudent.name}}</p>
-             </div>
-          </div> -->
           <div class="row">
-            <button type="button" class="btn-md btn-primary createListButton" (click)="getStudentByClass()">  Create List</button>
-          </div>
-         </div>
-        </div>
+            <button id="createList" type="button" class="btn-md btn-primary createListButton" (click)="getStudentByClass()">  Create List</button>
+          </div><br/>
+           <table class="table table-border">
+             <thead>
+			<tr>
+			  <td>Student List:</td>
+			  <td width="270">Parents' Email List:</td>
+			</tr>
+		  </thead>
+		    <tbody>
+             <tr>
+             <td>
+	          <div class="form-group">
+	            <!-- <label for="studentList">Student List:</label> -->
+	            <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent"><p>{{student.name}}</p>
+	            </div>
+	         </div>
+	        </td>
+	        <td>
+	          <div class="form-group">
+	            <!-- <label for="studentList">Parents' Email List:</label> -->
+	            <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent"><p>{{student.parentemail}}</p>
+	            </div>
+	         </div>
+	        </td>
+	        <td>
+	        	<div class="row">
+                 <button id="createList" type="button" class="btn-md btn-primary createListButton">Notification</button>
+                </div>
+	        </td>
+	        </tr>
+	        </tbody>
+         </table> 
+       </div>
         <div class="col-md-6">
             <!-- <div class="row">
             <div class="form-group">

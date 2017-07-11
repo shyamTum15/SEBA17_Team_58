@@ -59,6 +59,10 @@ export class SendEventComponent implements OnInit {
   	      })
   	 }
 
+  	 getStudentList(){
+  	 	this.getStudentByClass();
+  	 }
+
   ngOnInit() {
 
   	this.getEvent();
