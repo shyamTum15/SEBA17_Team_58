@@ -13,6 +13,7 @@ import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import {EventService} from './event.service';
 import {UserService} from './user.service';
+import {StudentService} from './student.service';
 import { EventOverviewComponent } from './eventoverview/eventoverview.component';
 import { EditDescriptionComponent } from './editdescription/editdescription.component';
 import { LoginComponent } from './login/login.component';
@@ -55,7 +56,7 @@ import { ShowUserComponent } from './show-user/show-user.component'
     HttpModule,
     FormsModule
   ],
-  providers: [EventService,UserService,AppGlobals],
+  providers: [EventService,UserService,AppGlobals,StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,6 +22,12 @@ export class StudentService {
   	     .map(res => res.json());
   }
 
+  getStudentsByClass(clss){
+    console.log("within student service class: ",clss);
+    return this.http.get("http://localhost:3000/api/students/"+clss)
+         .map(res => res.json());
+  }
+
   deleteStudent(id){
   	return this.http.delete("http://localhost:3000/api/students/"+id)
   	     .map(res => res.json());

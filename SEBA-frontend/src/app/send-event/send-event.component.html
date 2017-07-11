@@ -7,10 +7,16 @@
           </div>
           <div class="form-group">
             <label for="studentList">Student List:</label>
-            <input type="text" class="form-control" id="studentList">
+            <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent"><p>{{student.name}}</p>
           </div>
+          <!-- <div class="form-group">
+           <label for="studentList" class="col-sm-2 control-label">Student List: </label>
+             <div class="col-sm-9">
+                <p class="form-control">{{modelStudent.name}}</p>
+             </div>
+          </div> -->
           <div class="row">
-            <button type="button" class="btn-md btn-primary createListButton">  Create List</button>
+            <button type="button" class="btn-md btn-primary createListButton" (click)="getStudentByClass()">  Create List</button>
           </div>
          </div>
         </div>
