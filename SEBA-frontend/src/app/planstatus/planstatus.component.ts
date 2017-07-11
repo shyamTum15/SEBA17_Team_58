@@ -36,10 +36,10 @@ export class PlanStatusComponent implements OnInit {
   addStatus() {
     var newItem = (<HTMLInputElement>document.getElementById("newItem")).value;
     if (newItem != null || newItem != "") {
-      this.getEvent();
+    /*  this.getEvent(); */
       var model = this.event;
       var id = this.route.snapshot.params['id'];
-      model.status.push(newItem);
+      model.status.push("0"+newItem);
       this.eventService.updateEvent(id, model).subscribe();
     }
     (<HTMLInputElement>document.getElementById("newItem")).value = "";
@@ -57,10 +57,35 @@ export class PlanStatusComponent implements OnInit {
   }
 
   remove(i) {
-    this.getEvent();
+  /*  this.getEvent(); */
     var model = this.event;
     var id = this.route.snapshot.params['id'];
     model.status.splice(i, 1);
     this.eventService.updateEvent(id, model).subscribe();
   }
+
+
+/* @params i: the index of the item within the status array
+@params item: the string representation of the status item*/
+  changeStatus(i, item){
+    if(this.appglobals.getUserGlobal().role=="Teacher"){
+    var flag = item[0]; /* the first character of the string is the flag, 0=undone, 1=done */
+    var elemID = 'item_'+i; /* calculates the id of the DOM element of the item */
+    if(flag==0){
+      var newStatus = "1"+item.substr(1,item.length);
+      var model = this.event;
+      var id = this.route.snapshot.params['id'];
+      model.status.splice(i,1,newStatus);
+      this.eventService.updateEvent(id, model).subscribe();
+    }
+    if(flag==1){
+      var newStatus = "0"+item.substr(1,item.length);
+      var model = this.event;
+      var id = this.route.snapshot.params['id'];
+      model.status.splice(i,1,newStatus);
+      this.eventService.updateEvent(id, model).subscribe();
+    }
+  }
+}
+
 }

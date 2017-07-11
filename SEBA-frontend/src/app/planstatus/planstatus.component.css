@@ -1,0 +1,34 @@
+/*li:before {
+content: '\2713' !important;
+color: green;
+} */
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.done {
+  color: green;
+  font-size: 20px;
+}
+
+.undone {
+  color: grey;
+}
+
+.removeButton {
+  color: red;
+  font-size: 20px;
+}
+
+.listitem {
+  display:inline !important;
+}
+
+.insideItem {
+  display:inline-block !important;
+}

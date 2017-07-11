@@ -1,11 +1,17 @@
 <h4>Planning Status</h4>
 <div id="packinglist" *ngFor="let item of event.status; let i = index" [attr.data-index]="i">
   <ul>
-    <li> {{item}} <button class="btn btn-xs btn-danger" (click)="remove(i)" *ngIf="hideWhenParent()">Remove</button></li>
+    <li>
+      <div class="listitem">
+        <div class="insideItem" id="item_{{i}}"> {{item | slice:1}} </div>
+        <div id="checkbox_{{i}}" class="insideItem" [ngClass]="{ 'done': item[0] == 1 ,'undone':item[0]==0}" (click)=changeStatus(i,item)>✔</div>
+        <div class="removeButton insideItem" (click)="remove(i)" *ngIf="hideWhenParent()"> ✘</div>
+      </div>
+    </li>
   </ul>
 </div>
 
-<!-- input field + add-button to add other items to the list-->
+<!-- input field + add-button to add other items to the list -->
 <form class="input-append" *ngIf="hideWhenParent()">
   <input type="text" id="newItem">
   <button class="btn btn-primary btn-xs" type="submit" (click)="addStatus()">Add</button>
