@@ -1,9 +1,9 @@
 .col-md-3 {
-  padding-top: 20px;
+  padding-top: 2px;
   padding-bottom: 20px;
 }
 .col-md-6 {
-  padding-top: 20px;
+  padding-top: 2px;
   padding-bottom: 40px;
   padding-right: 10px;
   padding-left: 10px;
@@ -13,7 +13,9 @@
 }
 
 .row {
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 #overview {
@@ -21,6 +23,7 @@
   color: black;
 }
 
-.col-md-3 {
-
+#headlineEvent{
+  text-align: center;
+  border: 1px grey dashed;
 }

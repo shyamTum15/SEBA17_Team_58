@@ -19,16 +19,3 @@ ul {
 .undone {
   color: grey;
 }
-
-.removeButton {
-  color: red;
-  font-size: 20px;
-}
-
-.listitem {
-  display:inline !important;
-}
-
-.insideItem {
-  display:inline-block !important;
-}

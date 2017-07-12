@@ -1,7 +1,7 @@
 <h4>Don't forget to bring:</h4>
 <div id="packinglist" *ngFor="let item of event.packing; let i = index" [attr.data-index]="i">
   <ul>
-    <li>{{item}} <button class="btn btn-xs btn-danger" (click)="remove(item)" *ngIf="hideWhenParent()">Remove</button></li>
+    <li><div class="listitem">{{item}} <div class="removeButton insideItem" (click)="remove(item)" *ngIf="hideWhenParent()">✘</div></div></li>
   </ul>
 </div>
 <!-- input field + add-button to add other items to the list-->
