@@ -22,11 +22,12 @@ import 'rxjs/add/operator/startWith';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { Injectable } from "@angular/core";
 import { Inject } from "@angular/core";
+import {StartPageComponent} from './startpage/startpage.component';
 // import {Http} from 'angular2/http';
 
 const routes:Routes = [
   // {path:'',redirectTo:'/home', pathMatch:'full'},
-  {path:'',redirectTo:'/login', pathMatch:'full'},
+  {path:'',redirectTo:'/start', pathMatch:'full'},
   {path:'register', component:RegisterComponent},
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
@@ -35,15 +36,16 @@ const routes:Routes = [
   {path:'show/:id', component:ShowComponent},
   {path:'show-user/:id', component:ShowUserComponent},
   {path:'send-event/:id', component:SendEventComponent},
-  {path:'eventoverview/:id', component:EventOverviewComponent}
+  {path:'eventoverview/:id', component:EventOverviewComponent},
+  {path:'start', component:StartPageComponent}
   ];
 
-@Injectable() 
+@Injectable()
 export class AppGlobals {
 // use this property for property binding
   appglobals: any;
   // constructor(http:Http){
-    
+
   // }
   public isUserLoggedIn:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public isregistered:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);

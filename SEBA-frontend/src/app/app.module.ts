@@ -28,7 +28,9 @@ import {ScheduleComponent} from './schedule/schedule.component';
 import { SendEventComponent } from './send-event/send-event.component';
 import {BreadcrumbComponent} from './breadcrumb/breadcrumb.component';
 import {CommentBoxComponent} from './commentbox/commentbox.component';
-import { ShowUserComponent } from './show-user/show-user.component'
+import { ShowUserComponent } from './show-user/show-user.component';
+import {StartPageComponent} from './startpage/startpage.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,8 @@ import { ShowUserComponent } from './show-user/show-user.component'
     SendEventComponent,
     BreadcrumbComponent,
     CommentBoxComponent,
-    ShowUserComponent
+    ShowUserComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,

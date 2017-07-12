@@ -1,0 +1,58 @@
+
+.container {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  width: 100%;
+  float: right;
+}
+
+.row {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.col-md-3, .col-md-6, .col-md-9 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+#headline {
+font-size: 55px;
+font-family: sans-serif;
+padding-left: 10%;
+padding-top: 10%;
+font-weight: lighter;
+}
+
+#belowHeadline{
+  font-size: 30px;
+  font-family: sans-serif;
+  padding-left: 20%;
+  padding-top: 5%;
+  font-weight: lighter;
+}
+
+#features {
+  font-size: 15px;
+  font-family: sans-serif;
+  padding-left: 20%;
+  padding-top: 1%;
+  font-weight: lighter;
+}
+
+#loginColumn {
+  padding-top: 10%;
+  padding-right: 5%;
+}
+
+#businessModel {
+  font-size: 20px;
+  padding-top:5%;
+  padding-left: 5%;
+  display: inline-block;
+  font-weight: lighter;
+}
