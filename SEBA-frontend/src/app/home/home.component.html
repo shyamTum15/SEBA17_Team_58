@@ -15,10 +15,10 @@
 				<td routerLink="/eventoverview/{{event._id}}">{{event.class}}</td>
 				<td routerLink="/eventoverview/{{event._id}}">{{event.teacher}}</td>
 				<td width="270" style="margin-left: 50px ">
-					<a class="btn btn-info" routerLink="/show/{{event._id}}">Detail</a>
-					<a class="btn btn-success"  routerLink="/edit/{{event._id}}">Edit</a>
-					<a class="btn btn-danger" (click)="deleteEvent(event._id)">Delete</a>
-					<a class="sendButton btn btn-warning" routerLink="/send-event/{{event._id}}">Send</a>
+					<a class="btn btn-info" routerLink="/show/{{event._id}}" *ngIf="hideWhenParent()">Detail</a>
+					<a class="btn btn-success"  routerLink="/edit/{{event._id}}" *ngIf="hideWhenParent()">Edit</a>
+					<a class="btn btn-danger" (click)="deleteEvent(event._id)" *ngIf="hideWhenParent()">Delete</a>
+					<a class="sendButton btn btn-warning" routerLink="/send-event/{{event._id}}" *ngIf="hideWhenParent()">Send</a>
 				</td>
 			 </tr>
 		  </tbody>

@@ -8,7 +8,7 @@
             <app-cost></app-cost>
           </div>
           <div class="row">
-            <button type="button" class="btn btn-primary btn-md">  Create Student List</button>
+            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()">  Create Student List</button>
           </div>
           <div class="row">
             <h6>My child is allowed to participate.</h6>
@@ -33,10 +33,10 @@
             <app-packinglist></app-packinglist>
           </div>
           <div class="row">
-            <button type="button" class="btn btn-primary btn-md">Invite</button>
+            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()">Invite</button>
           </div>
           <div class="row">
-            <button type="button" class="btn btn-primary btn-md">View Participants</button>
+            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()">View Participants</button>
           </div>
         </div>
       </div>

@@ -45,5 +45,15 @@ export class NavbarComponent implements OnInit {
   goBack(){
    	this.router.navigate(['/login']);
    }
-
+   
+   hideWhenParent(){
+     if(this.appglobals.getUserGlobal().role.toString()=="Teacher"){
+       return true;
+     }
+     if(this.appglobals.getUserGlobal().role.toString()=="Parent"){
+       return false;
+     } else {
+       return false;
+     }
+   }
 }
