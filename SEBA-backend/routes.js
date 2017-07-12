@@ -1,9 +1,10 @@
 var express = require('express');
+var cors = require('cors');
 var router = express.Router();
 var Event = require('./model');
 var User = require('./modelUser');
 
-router.get('/',function(req,res){
+router.get('/',cors(),function(req,res){
      Event.getEvents(function(err,events){
      	if(err) throw err;
      	res.json(events);

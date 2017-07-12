@@ -20,7 +20,12 @@ mongoose.connect(config)
          	console.log("database error "+err);
          })
 var app = express();
+var cors = require('cors');
+app.use(cors())
+app.options('*', cors());
 var port = 3000;
+
+
 app.get('/',function(req,res){
     res.send("Hello from Seba Team 58...");
 });
@@ -28,7 +33,7 @@ var router = require('./routes');
 var routerUser = require('./routesUser');
 var routerStudent = require('./routesStudent');
 
-//middleware 
+//middleware
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
