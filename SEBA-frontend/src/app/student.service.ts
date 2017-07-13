@@ -28,6 +28,12 @@ export class StudentService {
          .map(res => res.json());
   }
 
+  getStudentsByEmail(email){
+    console.log("within student service email: ",email);
+    return this.http.get("http://localhost:3000/api/students/byEmail/"+email)
+         .map(res => res.json());
+  }
+
   deleteStudent(id){
   	return this.http.delete("http://localhost:3000/api/students/"+id)
   	     .map(res => res.json());
