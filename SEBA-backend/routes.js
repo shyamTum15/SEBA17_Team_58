@@ -62,4 +62,26 @@ router.get('/:_id',function(req,res){
      	res.json(events);
      });
 })
+
+     router.patch('/:id', function(req, res) {
+        var id = req.params.id;
+
+        if(req.body.infotext != {}){
+        var body = req.body.infotext
+        console.log("I'm in router.patch");
+        console.log("ID: " + id);
+        console.log("Value: " + req.body.infotext);
+        Event.findOneAndUpdate({_id: id}, {$set:{infotext: body}}, {new:true}, function(err,events){}
+      ); }
+
+      if(req.body.schedule != {}){
+      var body = req.body.schedule
+      console.log("I'm in router.patch");
+      console.log("ID: " + id);
+      console.log("Value: " + req.body.schedule);
+      Event.findOneAndUpdate({_id: id}, {$set:{schedule: body}}, {new:true}, function(err,events){}
+    ); }
+
+    })
+
 module.exports = router;

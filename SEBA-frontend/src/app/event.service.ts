@@ -32,4 +32,9 @@ export class EventService {
   	     .map(res => res.json());
   }
 
+  partialUpdateEvent(id,info){
+    return this.http.patch("http://localhost:3000/api/events/"+id,info)
+          .map(res => res.json());
+  }
+
 }

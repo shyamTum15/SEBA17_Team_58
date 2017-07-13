@@ -15,7 +15,8 @@ export class EditDescriptionComponent implements OnInit {
     public eventService: EventService,
     public route: ActivatedRoute,
     public router: Router,
-     public appglobals: AppGlobals
+    public appglobals: AppGlobals,
+    /*public event: Event*/
   ) { }
 
   ngOnInit() {
@@ -39,6 +40,7 @@ export class EditDescriptionComponent implements OnInit {
     document.getElementById("editButton").style.display = 'none';
     document.getElementById("saveButton").style.display = '';
     document.getElementById("cancelButton").style.display = '';
+    this.getEvent();
   }
 
   /* Invoked when the cancel-button is clicked.
@@ -48,7 +50,7 @@ export class EditDescriptionComponent implements OnInit {
     document.getElementById("editButton").style.display = '';
     document.getElementById("saveButton").style.display = "none";
     document.getElementById("cancelButton").style.display = "none";
-    document.getElementById("textDescr").className="";
+    document.getElementById("textDescr").className = "";
     document.getElementById("textDescr").setAttribute("contenteditable", "false");
     document.getElementById("textDescr").innerHTML = this.event.infotext;
   }
@@ -56,25 +58,33 @@ export class EditDescriptionComponent implements OnInit {
   /* Persists the new event infotext.
   Transfers the description box back into an uneditable text field.
   Hides the save and cancel buttons and displays the edit buttons. */
-  saveEdit() {
+    saveEdit() {
     var newDescr = document.getElementById("textDescr").innerHTML;
     var id = this.route.snapshot.params['id'];
+    console.log("[infotext] infotext Before getEvent(): " + this.event.infotext);
+    console.log("[infotext] schedule Before getEvent(): " + this.event.schedule);
     this.getEvent();
+    console.log("[infotext] infotext After getEvent(): " + this.event.infotext);
+    console.log("[infotext] schedule After getEvent(): " + this.event.schedule);
     var model = this.event;
     model.infotext = newDescr;
     this.eventService.updateEvent(id, model).subscribe();
-    document.getElementById("textDescr").className="";
+    this.getEvent();
+    document.getElementById("textDescr").className = "";
     document.getElementById("textDescr").setAttribute("contenteditable", "false");
     document.getElementById("editButton").style.display = '';
     document.getElementById("saveButton").style.display = "none";
     document.getElementById("cancelButton").style.display = "none";
+    document.getElementById("textDescr").innerHTML = newDescr;
+    console.log("[infotext] infotext After getEvent() and update: " + this.event.infotext);
+    console.log("[infotext] schedule After getEvent() and update: " + this.event.schedule);
   }
 
-  hideWhenParent(){
-    if(this.appglobals.getUserGlobal().role.toString()=="Teacher"){
+  hideWhenParent() {
+    if (this.appglobals.getUserGlobal().role.toString() == "Teacher") {
       return true;
     }
-    if(this.appglobals.getUserGlobal().role.toString()=="Parent"){
+    if (this.appglobals.getUserGlobal().role.toString() == "Parent") {
       return false;
     } else {
       return false;

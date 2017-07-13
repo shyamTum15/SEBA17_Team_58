@@ -23,6 +23,9 @@ module.exports.addEvent = function(newEvent,callback){
 }
 
 module.exports.updateEvent = function(id,newEvent,callback){
+	console.log("I'm in updateEvent in model.js");
+	console.log("id: "+id);
+	console.log("newEvent: " + newEvent);
       Event.findByIdAndUpdate(id,newEvent,callback);
 }
 
@@ -31,4 +34,12 @@ module.exports.deleteEvent = function(id,callback){
 }
 module.exports.getEvent = function(id,callback){
       Event.findById(id,callback);
+}
+
+module.exports.partialUpdateEvent = function(id,newItem){
+	console.log("I'm in partialUpdateEvent in model.js");
+	console.log("id: "+id);
+	console.log("newEvent: " + newItem);
+	Event.findOneAndUpdate({_id: id}, {$set:{infotext: "test3"}}, {new:true}, function(err,events){}
+);
 }

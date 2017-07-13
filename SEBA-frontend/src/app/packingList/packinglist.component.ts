@@ -34,6 +34,7 @@ export class PackingListComponent implements OnInit {
   from the input form and adds it to the status-array of the event.
   Resets the input-field after item has been added*/
   addPackingItem() {
+    this.getEvent();
     var newItem = (<HTMLInputElement>document.getElementById("newPackingItem")).value;
     if (newItem != null || newItem != "") {
       this.getEvent();

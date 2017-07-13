@@ -36,6 +36,7 @@ export class CostComponent implements OnInit {
     document.getElementById("editCostButton").style.display = 'none';
     document.getElementById("saveCostButton").style.display = '';
     document.getElementById("cancelCostButton").style.display = '';
+    this.getEvent();
   }
 
   cancelCostEdit() {
@@ -59,6 +60,7 @@ export class CostComponent implements OnInit {
     document.getElementById("editCostButton").style.display = '';
     document.getElementById("saveCostButton").style.display = "none";
     document.getElementById("cancelCostButton").style.display = "none";
+    document.getElementById("cost").innerHTML = newCost;
   }
 
   editDescr() {
@@ -67,6 +69,7 @@ export class CostComponent implements OnInit {
     document.getElementById("editDescrButton").style.display = 'none';
     document.getElementById("saveDescrButton").style.display = '';
     document.getElementById("cancelDescrButton").style.display = '';
+    this.getEvent();
   }
 
   cancelDescrEdit() {
@@ -90,6 +93,7 @@ export class CostComponent implements OnInit {
     document.getElementById("editDescrButton").style.display = '';
     document.getElementById("saveDescrButton").style.display = "none";
     document.getElementById("cancelDescrButton").style.display = "none";
+    document.getElementById("costDescr").innerHTML = newCost;
   }
 
   hideWhenParent(){
