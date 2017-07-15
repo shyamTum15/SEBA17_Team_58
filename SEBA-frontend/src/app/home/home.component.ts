@@ -42,12 +42,16 @@ export class HomeComponent implements OnInit {
     if(this.appglobals.getUserGlobal()!=null){
       console.log("from home user ",this.appglobals.getUserGlobal());
   	  this.getEvents();
+      this.userClass=this.appglobals.getUserGlobal().schoolClass.toString();
+      this.userRole=this.appglobals.getUserGlobal().role.toString();
       // checkClassMatch()
   }
  }
   events:Event;
   students:Student;
   flag=false;
+  userClass;
+  userRole;
   getEvents(){
   	this.eventService.getEvents()
   	    .subscribe(events=>{
@@ -56,6 +60,15 @@ export class HomeComponent implements OnInit {
           console.log("within function getevents this.events=  ", JSON.stringify(this.events));
   	    })
   }
+
+  // getEventEmails(){
+  //   this.eventService.getEventEmails()
+  //       .subscribe(events=>{
+  //         this.events = events;
+  //         // this.checkClassMatch(events);
+  //         console.log("within function getevents this.events=  ", JSON.stringify(this.events));
+  //       })
+  // }
 
   deleteEvent(id){
     this.eventService.deleteEvent(id)
@@ -73,6 +86,10 @@ export class HomeComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  checkMatchFinal(clss){
+    this.checkClassMatch(clss);
   }
 
   checkClassMatch(eventClass){

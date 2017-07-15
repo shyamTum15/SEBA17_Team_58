@@ -18,6 +18,7 @@ router.post('/',function(req,res){
          name: req.body.name,
          role: req.body.role,
          email: req.body.email,
+         schoolClass:req.body.schoolClass,
          password: req.body.password,
          address: req.body.address
      }
@@ -130,6 +131,7 @@ router.put('/:_id',function(req,res){
      var updateUser = {
          name: req.body.name,
          role: req.body.role,
+         schoolClass: req.body.schoolClass,
          email: req.body.email,
          password: req.body.password,
          address: req.body.address

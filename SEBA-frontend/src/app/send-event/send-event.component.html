@@ -27,13 +27,19 @@
 	        <td>
 	          <div class="form-group">
 	            <!-- <label for="studentList">Parents' Email List:</label> -->
-	            <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent"><p>{{student.parentemail}}</p>
+	            <td>
+	            <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent" >
+                <div>
+	            <p>{{student.parentemail}}</p></div>
+	            <div style="margin-left: 200px;margin-top: -35px;">
+	            <button id="createList" type="button" class="btn-md btn-primary createListButton" (click)="sendNotification(student.parentemail,model._id)">Notification</button>
+	            </div>
 	            </div>
 	         </div>
 	        </td>
 	        <td>
 	        	<div class="row">
-                 <button id="createList" type="button" class="btn-md btn-primary createListButton">Notification</button>
+                 
                 </div>
 	        </td>
 	        </tr>

@@ -12,6 +12,11 @@ export class EventService {
   	     .map(res => res.json());
   }
 
+  getEventEmails(){
+    return this.http.get("http://localhost:3000/api/eventEmails")
+         .map(res => res.json());
+  }
+
   addEvent(info){
   	return this.http.post("http://localhost:3000/api/events",info)
   	     .map(res => res.json());
@@ -30,6 +35,13 @@ export class EventService {
   updateEvent(id,info){
   	return this.http.put("http://localhost:3000/api/events/"+id,info)
   	     .map(res => res.json());
+  }
+
+  sendNotification(parentEmail,userEmail,modelId){
+    console.log("I am in sendNotification in routes parentEmail: ",parentEmail);
+    console.log("I am in sendNotification in routes userEmail: ",userEmail);
+    console.log("I am in sendNotification in routes modelId: ",modelId);
+    return this.http.post("http://localhost:3000/api/events/sendmail/"+parentEmail+"/"+userEmail+"/"+modelId,parentEmail,userEmail);
   }
 
 }
