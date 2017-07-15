@@ -27,15 +27,15 @@
   </div>
 </div>
 
-<!-- Dropdown Menu -->
+<!-- Role selection Menu Menu -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="descrition">Role</label>
   <div class="col-md-4">
-<select class="form-control" id="descriptionDropdown" type="role" name="role" required [(ngModel)]="model.role" #role="ngModel" form="registrationForm">
+<select class="form-control" id="role" type="role" name="role" required [(ngModel)]="model.role" #role="ngModel" form="registrationForm">
 <option value="Parent" selected>Parent</option>
 <option value="Teacher">Teacher</option>
 </select>
-<div *ngIf="role.errors && (role.dirty || name.touched)" class="alert alert-danger">
+<div *ngIf="role.errors && (role.dirty || role.touched)" class="alert alert-danger">
 	<div [hidden]="!role.errors.required">
 		Role is required
 	</div> </div>
@@ -51,6 +51,7 @@
   </div> -->
   </div>
 </div>
+
 
 <!-- Text input-->
 <div class="form-group">
@@ -149,6 +150,16 @@
             });
 		});
 
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<script type="text/javascript">
+		if (document.getElementById('role').value=='Parent'){
+			document.getElementById('schoolClass').display == 'visible';
+			}else{
+				document.getElementById('schoolClass').display == 'none';
+			}
 	</script>
 
 </body>

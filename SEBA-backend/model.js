@@ -18,6 +18,10 @@ module.exports.getEvents = function(callback){
       Event.find(callback);
 }
 
+module.exports.getEventEmails = function(callback){
+      Event.find({"class":1,_id:0},callback);
+}
+
 module.exports.addEvent = function(newEvent,callback){
       Event.create(newEvent,callback);
 }

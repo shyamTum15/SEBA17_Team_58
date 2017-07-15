@@ -8,8 +8,8 @@
 			  <td>Teacher</td>
 			</tr>
 		  </thead>
-		  <tbody>
-			 <tr *ngFor="let event of events" style="cursor:pointer">
+		  <tbody *ngFor="let event of events" style="cursor:pointer">
+			 <tr>
 				<td routerLink="/eventoverview/{{event._id}}">{{event.name}}</td>
 				<td routerLink="/eventoverview/{{event._id}}">{{event.description}}</td>
 				<td routerLink="/eventoverview/{{event._id}}">{{event.class}}</td>

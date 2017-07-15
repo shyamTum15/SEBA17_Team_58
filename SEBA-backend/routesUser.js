@@ -18,10 +18,11 @@ router.post('/',function(req,res){
          name: req.body.name,
          role: req.body.role,
          email: req.body.email,
+         schoolClass:req.body.schoolClass,
          password: req.body.password,
          address: req.body.address
      }
-     if (newUser.name !=null && newUser.role !=null && newUser.email !=null && newUser.password != null && newUser.address != null && newUser.name.length<11 && newUser.role.length<11 && newUser.password.length>3 && newUser.address.length>4 && newUser.address.length<21 && newUser.password==req.body.password1){
+     if (newUser.name !=null && newUser.role !=null && newUser.email !=null && newUser.password != null && newUser.address != null && newUser.name.length<31 && newUser.role.length<11 && newUser.password.length>3 && newUser.address.length>4 && newUser.address.length<21 && newUser.password==req.body.password1){
           User.addUser(newUser,function(err,users){
               if(err) throw err;
               console.log("req.body.password1",req.body.password1);
@@ -30,6 +31,7 @@ router.post('/',function(req,res){
      }
      else{
         console.log("error in data given");
+        console.log("newUser received ",newUser);
      }
 
 })
@@ -129,6 +131,7 @@ router.put('/:_id',function(req,res){
      var updateUser = {
          name: req.body.name,
          role: req.body.role,
+         schoolClass: req.body.schoolClass,
          email: req.body.email,
          password: req.body.password,
          address: req.body.address

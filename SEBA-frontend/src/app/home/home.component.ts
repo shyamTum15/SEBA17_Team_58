@@ -12,6 +12,8 @@ import { Inject } from "@angular/core";
 
 import {EventService} from '../event.service';
 import {Event} from '../event';
+import {StudentService} from '../student.service';
+import {Student} from '../student';
 import {forwardRef} from "@angular/core";
 
 
@@ -26,8 +28,10 @@ export class HomeComponent implements OnInit {
 
      public userService:UserService,
      public eventService:EventService,
+     public studentService:StudentService,
      public route:ActivatedRoute,
      public router:Router,
+     // public flag= false,
      // @Inject(AppGlobals) appglobals: AppGlobals
      // public appglobals: AppGlobals
      @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals
@@ -38,17 +42,33 @@ export class HomeComponent implements OnInit {
     if(this.appglobals.getUserGlobal()!=null){
       console.log("from home user ",this.appglobals.getUserGlobal());
   	  this.getEvents();
+      this.userClass=this.appglobals.getUserGlobal().schoolClass.toString();
+      this.userRole=this.appglobals.getUserGlobal().role.toString();
+      // checkClassMatch()
   }
  }
   events:Event;
+  students:Student;
+  flag=false;
+  userClass;
+  userRole;
   getEvents(){
   	this.eventService.getEvents()
   	    .subscribe(events=>{
   	    	this.events = events;
-
-          console.log("within function getevents this.events=  ", this.events);
+          // this.checkClassMatch(events);
+          console.log("within function getevents this.events=  ", JSON.stringify(this.events));
   	    })
   }
+
+  // getEventEmails(){
+  //   this.eventService.getEventEmails()
+  //       .subscribe(events=>{
+  //         this.events = events;
+  //         // this.checkClassMatch(events);
+  //         console.log("within function getevents this.events=  ", JSON.stringify(this.events));
+  //       })
+  // }
 
   deleteEvent(id){
     this.eventService.deleteEvent(id)
@@ -67,4 +87,26 @@ export class HomeComponent implements OnInit {
       return false;
     }
   }
+
+  checkMatchFinal(clss){
+    this.checkClassMatch(clss);
+  }
+
+  checkClassMatch(eventClass){
+     console.log("the user email in checkclassmatch function ",this.appglobals.getUserGlobal().email);
+     this.studentService.getStudentsByEmail(this.appglobals.getUserGlobal().email)
+          .subscribe(students=>{
+            this.students = students;
+            console.log("The fetched students class ",JSON.stringify(this.students));
+            for(var i = 0; i <(<any>this.students).length; i++) {
+                  if (this.students[i].class == eventClass) {
+                      this.flag= true;
+                  }
+                  else{this.flag= false;}
+              }
+          })
+
+        
+}
+
 }

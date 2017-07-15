@@ -16,6 +16,7 @@ import {Event} from '../event';
 import {Student} from '../student';
 import {forwardRef} from "@angular/core";
 
+
 @Component({
   selector: 'app-send-event',
   templateUrl: './send-event.component.html',
@@ -38,6 +39,8 @@ export class SendEventComponent implements OnInit {
   event: Event;
   modelStudent = new Student();
   student: Student;
+  temp =  new Student();
+  temp1={};
 
   getEvent(){
   	var id = this.route.snapshot.params['id'];
@@ -54,10 +57,25 @@ export class SendEventComponent implements OnInit {
   	this.studentService.getStudentsByClass(clss)
   	      .subscribe(student=>{
   	      	this.modelStudent  = student;
-  	 console.log("student fetched in send event page ",JSON.stringify(this.modelStudent));
+  	 console.log("student fetched in send event page ",JSON.stringify(student));
+  	 var arr = student.map(function (el) {
+  	 	console.log("el.parentemail ",el.parentemail);
+     return el.parentemail;
+});
 
   	      })
   	 }
+
+   sendNotification(parentEmail,eventId){
+   	       console.log("checking event Id if global from send event ts ",JSON.stringify(this.model));
+   	      console.log("I am in sendnotification within send-event user email: ", this.appglobals.getUserGlobal().email.toString());
+   	      let userEmail = this.appglobals.getUserGlobal().email.toString();
+         this.eventService.sendNotification(parentEmail,userEmail,eventId)
+              .subscribe(notification=>{
+              	console.log("notification from backend ",notification);
+              });
+         alert("Notification sent");
+   }
 
   	 getStudentList(){
   	 	this.getStudentByClass();

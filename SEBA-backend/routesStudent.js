@@ -19,6 +19,14 @@ router.get('/:class',function(req,res){
      });
 })
 
+router.get('/byEmail/:email',function(req,res){
+  console.log("received email in backend ",req.params.email);
+  Student.getStudentsByEmail(req.params.email,function(err,students){
+    if(err) throw err;
+    console.log("fetched Student from backend based on parent email ",students);
+    res.json(students);
+  });
+})
 // router.post('/',function(req,res){
 //   var newEvent = {
 //     name: req.body.name,
