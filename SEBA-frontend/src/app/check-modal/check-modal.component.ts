@@ -31,7 +31,11 @@ export class CheckModalComponent implements OnInit {
   checkMatchEvent(){
   	this.appEventId.setEnteredEventId(this.enteredEventval);
   	console.log("from check-modal this.enteredEventval ", this.enteredEventval);
+  	if(this.enteredEventval){
     this.router.navigate(['/home']);
+} else {
+	alert("Please enter a valid event Id");
   }
+}
 
 }
