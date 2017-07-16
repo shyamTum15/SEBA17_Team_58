@@ -37,6 +37,8 @@ export class EditDescriptionComponent implements OnInit {
   editText() {
     document.getElementById("textDescr").className = "form-group";
     document.getElementById("textDescr").setAttribute("contenteditable", "true");
+    document.getElementById("textDescr").style.background = "white";
+    document.getElementById("textDescr").style.border = "1px black solid"
     document.getElementById("editButton").style.display = 'none';
     document.getElementById("saveButton").style.display = '';
     document.getElementById("cancelButton").style.display = '';
@@ -52,6 +54,8 @@ export class EditDescriptionComponent implements OnInit {
     document.getElementById("cancelButton").style.display = "none";
     document.getElementById("textDescr").className = "";
     document.getElementById("textDescr").setAttribute("contenteditable", "false");
+    document.getElementById("textDescr").style.background = "none";
+    document.getElementById("textDescr").style.border = "none";
     document.getElementById("textDescr").innerHTML = this.event.infotext;
   }
 
@@ -69,6 +73,8 @@ export class EditDescriptionComponent implements OnInit {
     document.getElementById("editButton").style.display = '';
     document.getElementById("saveButton").style.display = "none";
     document.getElementById("cancelButton").style.display = "none";
+    document.getElementById("textDescr").style.background = "none";
+    document.getElementById("textDescr").style.border = "none";
     document.getElementById("textDescr").innerHTML = newDescr;
   }
 
