@@ -9,7 +9,7 @@ export class Event{
 	packing: Array<string>;
 	schedule: string;
 	comments: Array<string>;
-  inviteList: Array<any>;
+  notDecidedList: Array<any>;
   acceptList: Array<any>;
   declineList: Array<any>;
 }

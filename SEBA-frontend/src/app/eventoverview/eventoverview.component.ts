@@ -39,6 +39,7 @@ export class EventOverviewComponent implements OnInit {
   	this.eventService.getEvent(id)
   	      .subscribe(event=>{
   	      	this.event = event;
+  	      	console.log(this.event);
   	      })
   }
 
@@ -54,7 +55,7 @@ export class EventOverviewComponent implements OnInit {
    }
 
   addToDeclineList(){
-     if((this.event.declineList.includes(this.user.name))==false)
+     if(((this.event.acceptList.includes(this.user.name))==false)&&((this.event.declineList.includes(this.user.name))==false))
      {
        this.event.declineList.push(this.user.name);
        this.updateEvent();
@@ -63,7 +64,8 @@ export class EventOverviewComponent implements OnInit {
   }
 
    addToAcceptList() {
-     if ((this.event.acceptList.includes(this.user.name)) == false)
+    console.log('added to accept list');
+     if ((((this.event.acceptList.includes(this.user.name)) == false))&&((this.event.declineList.includes(this.user.name))==false))
      {
        this.event.acceptList.push(this.user.name);
        this.updateEvent();

@@ -10,7 +10,7 @@ var eventSchema = new mongoose.Schema({
 	packing: Array,
 	schedule: String,
 	comments: Array,
-	inviteList:Array,
+	notDecidedList:Array,
 	acceptList: Array,
 	declineList: Array
 })

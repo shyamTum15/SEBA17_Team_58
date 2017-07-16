@@ -27,3 +27,23 @@
   text-align: center;
   border: 1px grey dashed;
 }
+
+.consent-list{
+  padding-left: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height:250px;
+  width:250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background:
+    /* top, transparent black, faked with gradient */
+    linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1)
+    );
+}
+
+.list{
+  word-wrap: break-word;
+}
