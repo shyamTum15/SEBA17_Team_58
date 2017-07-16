@@ -4,22 +4,27 @@
         <div class="col-md-3">
           <div class="row">
           <app-planstatus></app-planstatus>
+          <hr/>
           </div>
           <div class="row">
             <app-cost></app-cost>
+            <hr/>
           </div>
           <div class="row">
             <button type="button" id="createListButton" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" routerLink="/studentlist/{{event._id}}" style="margin-top: 15px;">  Create Student List</button>
+            <hr/>
           </div>
           <div class="row">
             <h6>My child is allowed to participate.</h6>
             <button type="button" class="btn btn-primary btn-md">Agree</button>
             <button type="button" class="btn btn-primary btn-md">Decline</button>
+            <hr/>
           </div>
         </div>
         <div class="col-md-6">
           <div class="row">
           <app-editdescription></app-editdescription>
+          <hr/>
           </div>
           <div class="row">
             <div class="form-group">
@@ -30,14 +35,18 @@
         <div class="col-md-3">
           <div class="row">
             <app-schedule></app-schedule>
+            <hr/>
           <div class="row">
             <app-packinglist></app-packinglist>
+            <hr/>
           </div>
           <div class="row">
             <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" routerLink="/send-event/{{event._id}}">Invite</button>
+            <hr/>
           </div>
           <div class="row">
             <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()">View Participants</button>
+            <hr/>
           </div>
         </div>
       </div>
