@@ -1,13 +1,31 @@
 #cost {
   float: left;
-  margin-right: 15px;
-  width: 30px;
+  margin-left: 8px;
+  width: 60px;
   height: auto;
   color: black;
   font-size: 22px;
+  background-color: white;
 }
 
 #costDescr{
   color: black;
-  white-space:pre-wrap
+  width: 190px;
+  white-space:pre-wrap;
+  background-color: white;
+  margin-left: 8px;
+}
+
+#containerCost{
+	/*border: 1px solid black;*/
+	background-color: #C9E1E0;
+	width: 225px;
+}
+
+#editCostButton{
+    margin-left: 4px
+}
+
+#editDescrButton{
+    margin-left: 4px
 }

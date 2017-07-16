@@ -2,6 +2,7 @@
   <h4> Time Schedule </h4>
   <div class="" id="scheduleText"> {{event.schedule}} </div>
   <!-- TODO: Edit Button only visible for teachers -->
+  <br/>
   <button id="editScheduleButton" class="btn btn-primary btn-xs" *ngIf="hideWhenParent()" (click)="editScheduleText()">Edit</button>
   <button id="saveScheduleButton" class="btn btn-success btn-xs" *ngIf="hideWhenParent()" style="display:none" (click)="saveScheduleEdit()">Save</button>
   <button id="cancelScheduleButton" class="btn btn-danger btn-xs" *ngIf="hideWhenParent()" style="display:none" (click)="cancelScheduleEdit()">Cancel</button>

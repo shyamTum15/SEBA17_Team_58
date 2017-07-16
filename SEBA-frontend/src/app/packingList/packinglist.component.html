@@ -1,3 +1,4 @@
+<div id="containerPacking">
 <h4>Don't forget to bring:</h4>
 <div id="packinglist" *ngFor="let item of event.packing; let i = index" [attr.data-index]="i">
   <ul>
@@ -10,3 +11,4 @@
   <input type="text" id="newPackingItem" (click)="getEvent()" >
   <button class="btn btn-success btn-xs" (click)="addPackingItem()">Add</button>
 </form>
+</div>
