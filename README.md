@@ -5,7 +5,7 @@ HOW TO START THE APPLICATION
 Setting up MongoDB
 
 1. Create a database called "events"
-2. Under this database, create the following 4 collections: "events", "students", "users"
+2. Under this database, create the following 3 collections: "events", "students", "users"
 3. Set the path to the database $ mongod --dbpath yourpath
 
 Starting the frontend and backend server
