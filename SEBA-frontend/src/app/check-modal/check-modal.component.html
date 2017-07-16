@@ -1,0 +1,24 @@
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading">Check for event id</div>
+  <div class="panel-body">
+  <form class="form-horizontal" (submit)="checkMatchEvent()">
+  <div class="form-group">
+    <label for="event_name" class="col-sm-2 control-label">Enter Event id here: </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" [(ngModel)]="enteredEventval" name="enteredEventId" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Verify</button>
+    </div>
+
+  </div>
+  
+ </form>
+
+  </div>
+</div>
+</div>

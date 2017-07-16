@@ -31,6 +31,8 @@ import {CommentBoxComponent} from './commentbox/commentbox.component';
 import { ShowUserComponent } from './show-user/show-user.component';
 import {StartPageComponent} from './startpage/startpage.component';
 import {StudentListComponent} from './studentlist/studentlist.component';
+import { CheckModalComponent } from './check-modal/check-modal.component';
+import {AppEventId} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import {StudentListComponent} from './studentlist/studentlist.component';
     CommentBoxComponent,
     ShowUserComponent,
     StartPageComponent,
-    StudentListComponent
+    StudentListComponent,
+    CheckModalComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,7 @@ import {StudentListComponent} from './studentlist/studentlist.component';
     HttpModule,
     FormsModule
   ],
-  providers: [EventService,UserService,AppGlobals,StudentService],
+  providers: [EventService,UserService,AppGlobals,StudentService,AppEventId],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

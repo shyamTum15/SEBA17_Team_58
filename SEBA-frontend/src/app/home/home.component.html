@@ -9,7 +9,7 @@
 			</tr>
 		  </thead>
 		  <tbody *ngFor="let event of events" style="cursor:pointer">
-			 <tr>
+			 <tr *ngIf="appEventId.getEnteredEventId()==event._id || appglobals.getUserGlobal().role=='Teacher'">
 				<td routerLink="/eventoverview/{{event._id}}">{{event.name}}</td>
 				<td routerLink="/eventoverview/{{event._id}}">{{event.description}}</td>
 				<td routerLink="/eventoverview/{{event._id}}">{{event.class}}</td>
