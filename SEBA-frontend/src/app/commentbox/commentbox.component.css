@@ -15,3 +15,11 @@ ul {
 max-height: 400px !important;
 overflow: scroll;
 }
+
+/*#commentDisplay{
+	background-color: transparent;
+}*/
+
+#commentList{
+	background-color: transparent;
+}
