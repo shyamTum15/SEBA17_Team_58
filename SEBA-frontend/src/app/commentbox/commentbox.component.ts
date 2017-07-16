@@ -22,6 +22,7 @@ export class CommentBoxComponent implements OnInit {
     this.getEvent();
   }
   event: Event;
+  flag: any;
   getEvent() {
     var id = this.route.snapshot.params['id'];
     this.eventService.getEvent(id)
@@ -37,6 +38,7 @@ addComment(){
     var id = this.route.snapshot.params['id'];
     model.comments.push(newItem);
     this.eventService.updateEvent(id, model).subscribe();
+    this.flag = true;
   }
   (<HTMLInputElement>document.getElementById("comment")).value = "";
 }

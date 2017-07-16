@@ -52,6 +52,14 @@ export class SendEventComponent implements OnInit {
   	      })
   }
 
+  getEvent2(){
+    var id = this.route.snapshot.params['id'];
+  	this.eventService.getEvent(id)
+  	      .subscribe(event=>{
+  	      	this.event  = event;
+          })
+  }
+
   getStudentByClass(){
   	var clss = this.model.class;
   	this.studentService.getStudentsByClass(clss)
@@ -82,7 +90,7 @@ export class SendEventComponent implements OnInit {
   	 }
 
   ngOnInit() {
-
+    this.getEvent2();
   	this.getEvent();
   }
 

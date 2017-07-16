@@ -7,6 +7,7 @@ import {User} from '../user';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
 import {AppGlobals} from '../app-routing.module';
+import {AppEventId} from '../app-routing.module';
 import { Inject } from "@angular/core";
 import {forwardRef} from "@angular/core";
 
@@ -22,13 +23,15 @@ export class LoginComponent implements OnInit {
      public route:ActivatedRoute,
      public router:Router,
      // public appglobals: AppGlobals
-     @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals
+     @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals,
+     @Inject(forwardRef(() => AppEventId)) public appEventId: AppEventId
      ) { }
 
   ngOnInit() {
   }
 
   model = new User();
+  user;
   addUser(){
   	this.userService.addUser(this.model)
   	     .subscribe(()=>this.goLogin())
@@ -56,9 +59,14 @@ export class LoginComponent implements OnInit {
   }
 
   goHome(){
-
+    console.log("get user from login ", this.appglobals.getUserGlobal().role);
+    if (this.appglobals.getUserGlobal().role=="Parent"){
+    	console.log("I am under go home parent");
+        this.router.navigate(['/check-modal']);
+    }else{
    	this.router.navigate(['/home']);
    }
+  }
 
    goLogin(){
    	this.router.navigate(['/login']);

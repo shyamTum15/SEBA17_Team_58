@@ -39,6 +39,7 @@ export class ScheduleComponent implements OnInit {
     document.getElementById("editScheduleButton").style.display = 'none';
     document.getElementById("saveScheduleButton").style.display = '';
     document.getElementById("cancelScheduleButton").style.display = '';
+    this.getEvent();
   }
 
   /* Invoked when the cancel-button is clicked.
@@ -57,17 +58,18 @@ export class ScheduleComponent implements OnInit {
   Transfers the description box back into an uneditable text field.
   Hides the save and cancel buttons and displays the edit buttons. */
   saveScheduleEdit() {
-    var newDescr = document.getElementById("scheduleText").innerHTML;
+    var newDescr = document.getElementById("scheduleText").innerText;
     var id = this.route.snapshot.params['id'];
-    this.getEvent();
     var model = this.event;
     model.schedule = newDescr;
+    this.event = model;
     this.eventService.updateEvent(id, model).subscribe();
     document.getElementById("scheduleText").className="";
     document.getElementById("scheduleText").setAttribute("contenteditable", "false");
     document.getElementById("editScheduleButton").style.display = '';
     document.getElementById("saveScheduleButton").style.display = "none";
     document.getElementById("cancelScheduleButton").style.display = "none";
+    document.getElementById("scheduleText").innerHTML = newDescr;
   }
   hideWhenParent(){
     if(this.appglobals.getUserGlobal().role.toString()=="Teacher"){

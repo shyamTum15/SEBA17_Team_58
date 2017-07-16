@@ -78,6 +78,27 @@ router.get('/:_id',function(req,res){
      });
 })
 
+     router.patch('/:id', function(req, res) {
+        var id = req.params.id;
+
+        if(req.body.infotext != {}){
+        var body = req.body.infotext
+        console.log("I'm in router.patch");
+        console.log("ID: " + id);
+        console.log("Value: " + req.body.infotext);
+        Event.findOneAndUpdate({_id: id}, {$set:{infotext: body}}, {new:true}, function(err,events){}
+      ); }
+
+      if(req.body.schedule != {}){
+      var body = req.body.schedule
+      console.log("I'm in router.patch");
+      console.log("ID: " + id);
+      console.log("Value: " + req.body.schedule);
+      Event.findOneAndUpdate({_id: id}, {$set:{schedule: body}}, {new:true}, function(err,events){}
+    ); }
+
+    })
+
 router.post('/sendmail/:parentEmail/:userEmail/:modelId',function(req,res){
 
 console.log("I am in backend post send mail function req.params.userEmail ",req.params.userEmail);
@@ -89,7 +110,7 @@ let transporter = nodemailer.createTransport({
     // host: 'smtp.example.com',
     port: 465,
     service: 'Gmail',
-    secure: true, 
+    secure: true,
     auth: {
         user: 'schooleventappseba2017@gmail.com',
         pass: 'Seba@2017'

@@ -14,4 +14,23 @@ ul {
 #commentDisplay{
 max-height: 400px !important;
 overflow: scroll;
+width: 500px;
+margin-top: 5px;
+
+}
+
+/*#commentDisplay{
+	background-color: transparent;
+}*/
+
+#commentList{
+	background-color: transparent;
+}
+
+#commentDisplay{
+	background-color: transparent;
+}
+
+#newComment{
+	width: 500px;
 }

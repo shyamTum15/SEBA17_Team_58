@@ -15,6 +15,7 @@ import {Event} from '../event';
 import {StudentService} from '../student.service';
 import {Student} from '../student';
 import {forwardRef} from "@angular/core";
+import {AppEventId} from '../app-routing.module';
 
 
 @Component({
@@ -34,7 +35,9 @@ export class HomeComponent implements OnInit {
      // public flag= false,
      // @Inject(AppGlobals) appglobals: AppGlobals
      // public appglobals: AppGlobals
-     @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals
+     @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals,
+     // public appEventId: AppEventId
+     @Inject(forwardRef(() => AppEventId)) public appEventId: AppEventId
   	) { }
 
   ngOnInit() {
@@ -86,6 +89,13 @@ export class HomeComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  checkEventId(id){
+    if(this.appEventId.getEnteredEventId()==id){
+      return true;
+    }
+    else return false;
   }
 
   checkMatchFinal(clss){

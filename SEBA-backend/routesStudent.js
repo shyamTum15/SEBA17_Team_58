@@ -27,6 +27,18 @@ router.get('/byEmail/:email',function(req,res){
     res.json(students);
   });
 })
+
+router.post('/',function(req,res){
+     console.log("I am in routesStudent post");
+     var newStudent = {
+         name: req.body.name,
+         class: req.body.class,
+         address: req.body.address,
+         parentemail: req.body.parentemail
+     }
+     Student.addStudent(newStudent);
+})
+
 // router.post('/',function(req,res){
 //   var newEvent = {
 //     name: req.body.name,

@@ -23,6 +23,8 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { Injectable } from "@angular/core";
 import { Inject } from "@angular/core";
 import {StartPageComponent} from './startpage/startpage.component';
+import {StudentListComponent} from './studentlist/studentlist.component';
+import {CheckModalComponent} from './check-modal/check-modal.component';
 // import {Http} from 'angular2/http';
 
 const routes:Routes = [
@@ -37,7 +39,9 @@ const routes:Routes = [
   {path:'show-user/:id', component:ShowUserComponent},
   {path:'send-event/:id', component:SendEventComponent},
   {path:'eventoverview/:id', component:EventOverviewComponent},
-  {path:'start', component:StartPageComponent}
+  {path:'start', component:StartPageComponent},
+  {path:'studentlist/:id', component: StudentListComponent},
+  {path:'check-modal', component: CheckModalComponent}
   ];
 
 @Injectable()
@@ -73,6 +77,27 @@ export class AppGlobals {
   getRegistrationStatus(){
     return this.isregistered;
   }
+}
+
+@Injectable()
+export class AppEventId {
+// use this property for property binding
+  AppEventId: any;
+  // constructor(http:Http){
+
+  // }
+  // public enteredEventId:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public enteredEventId: any;
+
+  public user;
+  setEnteredEventId(isValue){
+   // this.isUserLoggedIn.next(isLoggedIn);
+   this.enteredEventId = isValue;
+  }
+  getEnteredEventId(){
+    return this.enteredEventId;
+  }
+
 }
 
 @NgModule({
