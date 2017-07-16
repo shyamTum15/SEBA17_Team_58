@@ -18,3 +18,8 @@ module.exports.getStudentsByEmail = function (email,callback){
 	console.log("email received to check if matched ",email);
     Student.find( { "parentemail":email },{"class":1,_id:0},callback );
 }
+
+module.exports.addStudent = function(newStudent,callback){
+	console.log("I am in modelStudent addStudent");
+      Student.create(newStudent,callback);
+}

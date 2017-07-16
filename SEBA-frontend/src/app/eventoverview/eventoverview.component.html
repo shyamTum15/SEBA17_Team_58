@@ -9,7 +9,7 @@
             <app-cost></app-cost>
           </div>
           <div class="row">
-            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()">  Create Student List</button>
+            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" routerLink="/studentlist/{{event._id}}">  Create Student List</button>
           </div>
           <div class="row">
             <h6>My child is allowed to participate.</h6>
@@ -34,7 +34,7 @@
             <app-packinglist></app-packinglist>
           </div>
           <div class="row">
-            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()">Invite</button>
+            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" routerLink="/send-event/{{event._id}}">Invite</button>
           </div>
           <div class="row">
             <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()">View Participants</button>

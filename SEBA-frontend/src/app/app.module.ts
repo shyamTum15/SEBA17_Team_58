@@ -30,6 +30,7 @@ import {BreadcrumbComponent} from './breadcrumb/breadcrumb.component';
 import {CommentBoxComponent} from './commentbox/commentbox.component';
 import { ShowUserComponent } from './show-user/show-user.component';
 import {StartPageComponent} from './startpage/startpage.component';
+import {StudentListComponent} from './studentlist/studentlist.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {StartPageComponent} from './startpage/startpage.component';
     BreadcrumbComponent,
     CommentBoxComponent,
     ShowUserComponent,
-    StartPageComponent
+    StartPageComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,

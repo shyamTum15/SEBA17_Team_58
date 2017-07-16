@@ -23,6 +23,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { Injectable } from "@angular/core";
 import { Inject } from "@angular/core";
 import {StartPageComponent} from './startpage/startpage.component';
+import {StudentListComponent} from './studentlist/studentlist.component';
 // import {Http} from 'angular2/http';
 
 const routes:Routes = [
@@ -37,7 +38,8 @@ const routes:Routes = [
   {path:'show-user/:id', component:ShowUserComponent},
   {path:'send-event/:id', component:SendEventComponent},
   {path:'eventoverview/:id', component:EventOverviewComponent},
-  {path:'start', component:StartPageComponent}
+  {path:'start', component:StartPageComponent},
+  {path:'studentlist/:id', component: StudentListComponent}
   ];
 
 @Injectable()
