@@ -30,8 +30,6 @@ export class SendEventComponent implements OnInit {
      public eventService:EventService,
      public route:ActivatedRoute,
      public router:Router,
-     // @Inject(AppGlobals) appglobals: AppGlobals
-     // public appglobals: AppGlobals
      @Inject(forwardRef(() => AppGlobals)) public appglobals: AppGlobals
   	) { }
 

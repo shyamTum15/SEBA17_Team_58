@@ -25,7 +25,6 @@ import { Inject } from "@angular/core";
 import {StartPageComponent} from './startpage/startpage.component';
 import {StudentListComponent} from './studentlist/studentlist.component';
 import {CheckModalComponent} from './check-modal/check-modal.component';
-// import {Http} from 'angular2/http';
 
 const routes:Routes = [
   // {path:'',redirectTo:'/home', pathMatch:'full'},
@@ -71,7 +70,6 @@ export class AppGlobals {
   }
 
   setRegistrationStatus(isregistered){
-   // this.isUserLoggedIn.next(isLoggedIn);
    this.isregistered = isregistered;
   }
   getRegistrationStatus(){
@@ -83,15 +81,11 @@ export class AppGlobals {
 export class AppEventId {
 // use this property for property binding
   AppEventId: any;
-  // constructor(http:Http){
 
-  // }
-  // public enteredEventId:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public enteredEventId: any;
 
   public user;
   setEnteredEventId(isValue){
-   // this.isUserLoggedIn.next(isLoggedIn);
    this.enteredEventId = isValue;
   }
   getEnteredEventId(){

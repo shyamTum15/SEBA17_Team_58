@@ -1,8 +1,8 @@
 var express = require('express');
 var cors = require('cors');
 var router = express.Router();
-var Event = require('./model');
-var User = require('./modelUser');
+var Event = require('../models/model');
+var User = require('../models/modelUser');
 var nodemailer = require('nodemailer');
 
 router.get('/',cors(),function(req,res){

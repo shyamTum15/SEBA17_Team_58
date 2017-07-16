@@ -53,29 +53,7 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
 	bcrypt.compare(candidatePassword, hash, function(err, res) {
 	   console.log("I am in bcrypt candidatePassword ",candidatePassword);
 	   console.log("I am in bcrypt hash",hash);
-	   // if(candidatePassword==hash){
-	   // 	res=true;
-	   // }
-	   // else{
-	   // 	res=false;
-	   // }
-       // if(err) throw err;
-       // if (res){
-       // 	return true; 
-       // }
-       // else {
-       // 	return false;
-       // }
-       callback(null, res);
+	   callback(null, res);
   });
 
-//     bcrypt.hash(candidatePassword, 10, function(err, hash) {
-//     if (err) { console.log(err); }
-
-//     bcrypt.compare(candidatePassword, hash, function(err, result) {
-//         if (err) { console.log (err); }
-//         console.log('result in bcryt compare ',result);
-//         callback(null,result);
-//     });
-// });
 }
