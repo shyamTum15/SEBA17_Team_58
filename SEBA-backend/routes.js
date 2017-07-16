@@ -72,7 +72,6 @@ router.get('/:_id',function(req,res){
      });
 })
 
-<<<<<<< HEAD
      router.patch('/:id', function(req, res) {
         var id = req.params.id;
 
@@ -93,7 +92,7 @@ router.get('/:_id',function(req,res){
     ); }
 
     })
-=======
+
 router.post('/sendmail/:parentEmail/:userEmail/:modelId',function(req,res){
 
 console.log("I am in backend post send mail function req.params.userEmail ",req.params.userEmail);
@@ -105,7 +104,7 @@ let transporter = nodemailer.createTransport({
     // host: 'smtp.example.com',
     port: 465,
     service: 'Gmail',
-    secure: true, 
+    secure: true,
     auth: {
         user: 'schooleventappseba2017@gmail.com',
         pass: 'Seba@2017'
@@ -140,6 +139,5 @@ transporter.sendMail(mailerOptions,(error,info)=>{
 // });
 
 })
->>>>>>> 22704e118056646aa29f5dff41b32c1a511099c4
 
 module.exports = router;

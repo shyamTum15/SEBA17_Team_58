@@ -37,17 +37,11 @@ export class EventService {
   	     .map(res => res.json());
   }
 
-<<<<<<< HEAD
-  partialUpdateEvent(id,info){
-    return this.http.patch("http://localhost:3000/api/events/"+id,info)
-          .map(res => res.json());
-=======
   sendNotification(parentEmail,userEmail,modelId){
     console.log("I am in sendNotification in routes parentEmail: ",parentEmail);
     console.log("I am in sendNotification in routes userEmail: ",userEmail);
     console.log("I am in sendNotification in routes modelId: ",modelId);
     return this.http.post("http://localhost:3000/api/events/sendmail/"+parentEmail+"/"+userEmail+"/"+modelId,parentEmail,userEmail);
->>>>>>> 22704e118056646aa29f5dff41b32c1a511099c4
   }
 
 }

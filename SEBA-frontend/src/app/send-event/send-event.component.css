@@ -13,5 +13,35 @@ td {
 }
 
 .th1{
-	margin-left: 100px; 
+	margin-left: 100px;
+}
+
+.col-md-3 {
+  padding-top: 2px;
+  padding-bottom: 20px;
+}
+.col-md-6 {
+  padding-top: 2px;
+  padding-bottom: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.container {
+  width: 1200px;
+}
+
+.row {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+#overview {
+  background-color: rgba(255,255,255,0.5) !important;
+  color: black;
+}
+
+#headlineEvent{
+  text-align: center;
+  border: 1px grey dashed;
 }

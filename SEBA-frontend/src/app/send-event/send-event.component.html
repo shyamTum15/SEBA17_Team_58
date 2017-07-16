@@ -1,64 +1,69 @@
- <div class="container" id="overview">
+<div class="container" id="overview">
+  <div class="row" id="headlineEvent">
+    <h2>{{event.name}} &nbsp; &nbsp; &nbsp; {{event.class}} &nbsp; &nbsp; &nbsp;  {{event.teacher}}</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
       <div class="row">
-        <div class="col-md-3">
-          <div class="form-group">
-            <label for="classNo">Class:</label>
-            <input type="text" class="form-control" id="classNo" [(ngModel)]="model.class" name="classNo">
-          </div>
-          <div class="row">
-            <button id="createList" type="button" class="btn-md btn-primary createListButton" (click)="getStudentByClass()">  Create List</button>
-          </div><br/>
-           <table class="table table-border">
-             <thead>
-			<tr>
-			  <td>Student List:</td>
-			  <td width="270">Parents' Email List:</td>
-			</tr>
-		  </thead>
-		    <tbody>
-             <tr>
-             <td>
-	          <div class="form-group">
-	            <!-- <label for="studentList">Student List:</label> -->
-	            <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent"><p>{{student.name}}</p>
-	            </div>
-	         </div>
-	        </td>
-	        <td>
-	          <div class="form-group">
-	            <!-- <label for="studentList">Parents' Email List:</label> -->
-	            <td>
-	            <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent" >
-                <div>
-	            <p>{{student.parentemail}}</p></div>
-	            <div style="margin-left: 200px;margin-top: -35px;">
-	            <button id="createList" type="button" class="btn-md btn-primary createListButton" (click)="sendNotification(student.parentemail,model._id)">Notification</button>
-	            </div>
-	            </div>
-	         </div>
-	        </td>
-	        <td>
-	        	<div class="row">
-                 
-                </div>
-	        </td>
-	        </tr>
-	        </tbody>
-         </table> 
-       </div>
-        <div class="col-md-6">
-            <!-- <div class="row">
-            <div class="form-group">
-              <app-comments></app-comments>
-            </div>
-          </div> -->
-        </div>
-        <div class="col-md-3">
-          <!-- <div class="row">
-            <app-schedule></app-schedule>
-          <div class="row">
-            <app-packinglist></app-packinglist>
-          </div>
-         </div> -->
+        <app-planstatus></app-planstatus>
+      </div>
+      <div class="row">
+        <app-cost></app-cost>
       </div>
     </div>
+    <div class="col-md-3">
+      <div class="row">
+        <app-schedule></app-schedule>
+      </div>
+        <div class="row">
+          <app-packinglist></app-packinglist>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="form-group">
+          <label for="classNo">Class:</label>
+          <input type="text" class="form-control" id="classNo" [(ngModel)]="model.class" name="classNo"/>
+        </div>
+        <div class="row">
+          <button id="createList" type="button" class="btn btn-md btn-primary createListButton" (click)="getStudentByClass()">Create List</button>
+        </div><br/>
+        <div class="row">
+        <table class="table table-border">
+          <thead>
+            <tr>
+              <td>Student List:</td>
+              <td width="270">Parents' Email List:</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <!-- <label for="studentList">Student List:</label> -->
+                  <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent">
+                    <p>{{student.name}}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <!-- <label for="studentList">Parents' Email List:</label> -->
+                  <div type="text" class="form-control" id="studentList" *ngFor="let student of modelStudent">
+                    <div>
+                      <p>{{student.parentemail}}</p>
+                    </div>
+                    <div style="margin-left: 200px;margin-top: -35px;">
+                      <button id="createList" type="button" class="btn btn-xs btn-primary createListButton" (click)="sendNotification(student.parentemail,model._id)">Notification</button>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
