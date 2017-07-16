@@ -9,6 +9,9 @@ export class Event{
 	packing: Array<string>;
 	schedule: string;
 	comments: Array<string>;
+  inviteList: Array<any>;
+  acceptList: Array<any>;
+  declineList: Array<any>;
 }
 
 /* the cost information consists of an array containing:

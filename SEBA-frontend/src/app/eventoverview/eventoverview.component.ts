@@ -28,8 +28,11 @@ export class EventOverviewComponent implements OnInit {
 
   ngOnInit() {
   	this.getEvent();
+  	this.user=this.appglobals.getUserGlobal();
   }
 
+  toggleView: boolean=false;
+  user:any;
   event: Event;
   getEvent(){
   	var id = this.route.snapshot.params['id'];
@@ -39,8 +42,32 @@ export class EventOverviewComponent implements OnInit {
   	      })
   }
 
+  updateEvent(){
+    var id = this.route.snapshot.params['id'];
+    this.eventService.updateEvent(id,this.event)
+      .subscribe(event=>{
+      })
+  }
+
    goBack(){
    	this.router.navigate(['/home']);
+   }
+
+  addToDeclineList(){
+     if((this.event.declineList.includes(this.user.name))==false)
+     {
+       this.event.declineList.push(this.user.name);
+       this.updateEvent();
+     }
+
+  }
+
+   addToAcceptList() {
+     if ((this.event.acceptList.includes(this.user.name)) == false)
+     {
+       this.event.acceptList.push(this.user.name);
+       this.updateEvent();
+     }
    }
 
    hideWhenParent(){
@@ -53,5 +80,11 @@ export class EventOverviewComponent implements OnInit {
        return false;
      }
    }
+  toggleParticipantView(){
+     if(this.toggleView==false)
+       this.toggleView=true;
+     else
+       this.toggleView=false;
+  }
 
 }

@@ -9,7 +9,10 @@ var eventSchema = new mongoose.Schema({
 	cost: Array,
 	packing: Array,
 	schedule: String,
-	comments: Array
+	comments: Array,
+	inviteList:Array,
+	acceptList: Array,
+	declineList: Array
 })
 
 var Event = module.exports = mongoose.model('event',eventSchema);
