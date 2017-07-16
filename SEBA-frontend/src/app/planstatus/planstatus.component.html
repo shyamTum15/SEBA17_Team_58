@@ -4,15 +4,17 @@
     <li>
       <div class="listitem">
         <div class="insideItem" id="item_{{i}}"> {{item | slice:1}} </div>
-        <div id="checkbox_{{i}}" class="insideItem" [ngClass]="{ 'done': item[0] == 1 ,'undone':item[0]==0}" (click)=changeStatus(i,item)>✔</div>
-        <div class="removeButton insideItem" (click)="remove(i)" *ngIf="hideWhenParent()"> ✘</div>
+        <div id="checkbox_{{i}}" class="insideItem" [ngClass]="{ 'done': item[0] == 1 ,'undone':item[0]==0}" (click)="changeStatus(i,item)">✔</div>
+        <div class="removeButton insideItem" (click)="getEvent(); remove(i)" *ngIf="hideWhenParent()"> ✘</div>
       </div>
     </li>
   </ul>
 </div>
 
+<div *ngIf="hideWhenParent()" id="addStatusForm">
 <!-- input field + add-button to add other items to the list -->
 <form class="input-append" *ngIf="hideWhenParent()">
-  <input type="text" id="newItem">
-  <button class="btn btn-primary btn-xs" type="submit" (click)="addStatus()">Add</button>
+  <input type="text" id="newItem" (click)="getEvent()">
+  <button class="btn btn-success btn-xs" type="submit" (click)="addStatus()">Add</button>
 </form>
+</div>

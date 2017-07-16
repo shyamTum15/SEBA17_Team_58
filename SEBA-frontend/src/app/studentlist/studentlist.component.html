@@ -10,6 +10,15 @@
         <app-cost></app-cost>
       </div>
     </div>
+    
+    <div class="col-md-3">
+      <div class="row">
+        <app-schedule></app-schedule>
+        <div class="row">
+          <app-packinglist></app-packinglist>
+        </div>
+      </div>
+    </div>
     <div class="col-md-6">
 
       <h4> Student's Considered for Event </h4>
@@ -36,28 +45,36 @@
       <h4> Add more Students </h4>
 
       <form class="form-horizontal" id="addStudentForm" (submit)="addStudent()">
-        <div class="form-group">
-          <label for="event_name" class="col-sm-2 control-label">Student's Name: </label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" [(ngModel)]="model.name" name="name">
+        <div class="row">
+          <div class="form-group">
+            <label for="event_name" class="col-sm-2 control-label">Student's Name: </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" [(ngModel)]="model.name" name="name">
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="description" class="col-sm-2 control-label">Class: </label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" [(ngModel)]="model.class" name="class">
+        <div class="row">
+          <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">Class: </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" [(ngModel)]="model.class" name="class">
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="class" class="col-sm-2 control-label">Address: </label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" [(ngModel)]="model.address" name="address">
+        <div class="row">
+          <div class="form-group">
+            <label for="class" class="col-sm-2 control-label">Address: </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" [(ngModel)]="model.address" name="address">
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="teacher" class="col-sm-2 control-label">Parent's E-Mail: </label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" [(ngModel)]="model.parentemail" name="parentemail">
+        <div class="row">
+          <div class="form-group">
+            <label for="teacher" class="col-sm-2 control-label">Parent's E-Mail: </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" [(ngModel)]="model.parentemail" name="parentemail">
+            </div>
           </div>
         </div>
 
@@ -71,12 +88,12 @@
       </form>
 
     </div>
-    <div class="col-md-3">
+    <!--<div class="col-md-3">
       <div class="row">
         <app-schedule></app-schedule>
         <div class="row">
           <app-packinglist></app-packinglist>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>

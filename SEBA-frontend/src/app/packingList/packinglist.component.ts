@@ -34,16 +34,14 @@ export class PackingListComponent implements OnInit {
   from the input form and adds it to the status-array of the event.
   Resets the input-field after item has been added*/
   addPackingItem() {
-    this.getEvent();
-    var newItem = (<HTMLInputElement>document.getElementById("newPackingItem")).value;
-    if (newItem != null || newItem != "") {
-      this.getEvent();
-      var model = this.event;
-      var id = this.route.snapshot.params['id'];
-      model.packing.push(newItem);
-      this.eventService.updateEvent(id, model).subscribe();
+      var newItem = (<HTMLInputElement>document.getElementById("newPackingItem")).value;
+      if (newItem != null || newItem != "") {
+        var model = this.event;
+        var id = this.route.snapshot.params['id'];
+        model.packing.push(newItem);
+        this.eventService.updateEvent(id, model).subscribe();
+      (<HTMLInputElement>document.getElementById("newPackingItem")).value = "";
     }
-    (<HTMLInputElement>document.getElementById("newPackingItem")).value = "";
   }
 
   hideWhenParent() {
@@ -58,7 +56,6 @@ export class PackingListComponent implements OnInit {
   }
 
   remove(i) {
-    this.getEvent();
     var model = this.event;
     var id = this.route.snapshot.params['id'];
     model.packing.splice(i, 1);

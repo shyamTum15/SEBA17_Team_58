@@ -58,20 +58,12 @@ export class ScheduleComponent implements OnInit {
   Transfers the description box back into an uneditable text field.
   Hides the save and cancel buttons and displays the edit buttons. */
   saveScheduleEdit() {
-    console.log("[schedule] infotext Before getEvent(): " + this.event.infotext);
-    console.log("[schedule] schedule Before getEvent(): " + this.event.schedule);
-    this.getEvent();
-    console.log("[schedule] infotext after getEvent(): " + this.event.infotext);
-    console.log("[schedule] schedule after getEvent(): " + this.event.schedule);
-    var newDescr = document.getElementById("scheduleText").innerHTML;
+    var newDescr = document.getElementById("scheduleText").innerText;
     var id = this.route.snapshot.params['id'];
     var model = this.event;
     model.schedule = newDescr;
     this.event = model;
     this.eventService.updateEvent(id, model).subscribe();
-    this.getEvent();
-    console.log("[schedule] infotext after getEvent() and update: " + this.event.infotext);
-    console.log("[schedule] schedule after getEvent() and update: " + this.event.schedule);
     document.getElementById("scheduleText").className="";
     document.getElementById("scheduleText").setAttribute("contenteditable", "false");
     document.getElementById("editScheduleButton").style.display = '';

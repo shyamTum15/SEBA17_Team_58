@@ -36,7 +36,6 @@ export class PlanStatusComponent implements OnInit {
   addStatus() {
     var newItem = (<HTMLInputElement>document.getElementById("newItem")).value;
     if (newItem != null || newItem != "") {
-      this.getEvent();
       var model = this.event;
       var id = this.route.snapshot.params['id'];
       model.status.push("0"+newItem);
@@ -57,7 +56,6 @@ export class PlanStatusComponent implements OnInit {
   }
 
   remove(i) {
-  /*  this.getEvent(); */
     var model = this.event;
     var id = this.route.snapshot.params['id'];
     model.status.splice(i, 1);
