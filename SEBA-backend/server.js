@@ -16,7 +16,7 @@ mongoose.connect(config)
          .on('connected',function(){
          	console.log("successfully connected to "+config);
          })
-         .on('error',function(){
+         .on('error',function(err){
          	console.log("database error "+err);
          })
 var app = express();
