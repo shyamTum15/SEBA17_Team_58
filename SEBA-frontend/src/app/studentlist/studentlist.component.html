@@ -1,6 +1,7 @@
 <div class="container" id="overview">
   <div class="row" id="headlineEvent">
-    <h2>{{event.name}} &nbsp; &nbsp; &nbsp; {{event.class}} &nbsp; &nbsp; &nbsp;  {{event.teacher}}</h2></div>
+    <h2>{{event.name}} &nbsp; &nbsp; &nbsp; {{event.class}} &nbsp; &nbsp; &nbsp;  {{event.teacher}}</h2>
+  </div>
   <div class="row">
     <div class="col-md-3">
       <div class="row">
@@ -10,90 +11,79 @@
         <app-cost></app-cost>
       </div>
     </div>
-    
-    <div class="col-md-3">
-      <div class="row">
-        <app-schedule></app-schedule>
-        <div class="row">
-          <app-packinglist></app-packinglist>
-        </div>
-      </div>
-    </div>
     <div class="col-md-6">
-
-      <h4> Student's Considered for Event </h4>
-      <button id="createList2" type="button" class="btn btn-md btn-primary" (click)="getStudentByClass()">Show List</button>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Student's Name</th>
-            <th>Class</th>
-            <th>Address</th>
-            <th>Parent's Mail</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let student of modelStudent">
-            <td> {{student.name}} </td>
-            <td> {{student.class}} </td>
-            <td> {{student.address}} </td>
-            <td> {{student.parentemail}} </td>
-          </tr>
-        </tbody>
-      </table>
-
+        <h4> Student's Considered for Event </h4>
+        <button id="createList2" type="button" class="btn btn-md btn-primary" (click)="getStudentByClass()">Show List</button>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Student's Name</th>
+              <th>Class</th>
+              <th>Address</th>
+              <th>Parent's Mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of modelStudent">
+              <td> {{student.name}} </td>
+              <td> {{student.class}} </td>
+              <td> {{student.address}} </td>
+              <td> {{student.parentemail}} </td>
+            </tr>
+          </tbody>
+        </table>
+    <div class="row">
       <h4> Add more Students </h4>
-
-      <form class="form-horizontal" id="addStudentForm" (submit)="addStudent()">
+      <form class="form-group" id="addStudentForm" (submit)="addStudent()">
         <div class="row">
           <div class="form-group">
-            <label for="event_name" class="col-sm-2 control-label">Student's Name: </label>
-            <div class="col-sm-9">
+            <label for="event_name" class="control-label">Student's Name: </label>
+            <div class="">
               <input type="text" class="form-control" [(ngModel)]="model.name" name="name">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="form-group">
-            <label for="description" class="col-sm-2 control-label">Class: </label>
-            <div class="col-sm-9">
+            <label for="description" class="control-label">Class: </label>
+            <div class="">
               <input type="text" class="form-control" [(ngModel)]="model.class" name="class">
             </div>
           </div>
         </div>
+
         <div class="row">
-          <div class="form-group">
-            <label for="class" class="col-sm-2 control-label">Address: </label>
-            <div class="col-sm-9">
+          <div class="">
+            <label for="class" class="control-label">Address: </label>
+            <div class="">
               <input type="text" class="form-control" [(ngModel)]="model.address" name="address">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="form-group">
-            <label for="teacher" class="col-sm-2 control-label">Parent's E-Mail: </label>
-            <div class="col-sm-9">
+            <label for="teacher" class="ontrol-label">Parent's E-Mail: </label>
+            <div class="">
               <input type="text" class="form-control" [(ngModel)]="model.parentemail" name="parentemail">
             </div>
           </div>
         </div>
-
-
         <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-8">
+          <div class="">
             <button type="submit" class="btn btn-success">Add</button>
           </div>
-
         </div>
       </form>
-
     </div>
-    <!--<div class="col-md-3">
-      <div class="row">
-        <app-schedule></app-schedule>
-        <div class="row">
-          <app-packinglist></app-packinglist>
-        </div>
-      </div>
-    </div> -->
+
   </div>
+  <div class="col-md-3">
+    <div class="row">
+      <app-schedule></app-schedule>
+      <div class="row">
+        <app-packinglist></app-packinglist>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

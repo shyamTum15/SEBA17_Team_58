@@ -7,10 +7,16 @@
   <button class="btn btn-danger btn-sm" id="cancelCostButton" *ngIf="hideWhenParent()" style="display:none" (click)="cancelCostEdit()">Cancel</button>
 <br><br>
   <div type="text" id="costDescr">{{event.cost[1]}}</div>
+<<<<<<< HEAD
   <br/>
   <button class="btn btn-primary btn-sm" id="editDescrButton" *ngIf="hideWhenParent()" type="submit" (click)="editDescr()">Edit</button>
   <button class="btn btn-success btn-sm" id="saveDescrButton" *ngIf="hideWhenParent()" style="display:none" (click)="saveDescrEdit()">Save</button>
   <button class="btn btn-danger btn-sm" id="cancelDescrButton" *ngIf="hideWhenParent()" style="display:none" (click)="cancelDescrEdit()">Cancel</button>
 <br><br>
 <button class="btn btn-primary btn-md" *ngIf="hideWhenParent()" id="paymentList">Payment Overview</button>
+=======
+  <button class="btn btn-primary btn-xs" id="editDescrButton" *ngIf="hideWhenParent()" type="submit" (click)="editDescr()">Edit</button>
+  <button class="btn btn-success btn-xs" id="saveDescrButton" *ngIf="hideWhenParent()" style="display:none" (click)="saveDescrEdit()">Save</button>
+  <button class="btn btn-danger btn-xs" id="cancelDescrButton" *ngIf="hideWhenParent()" style="display:none" (click)="cancelDescrEdit()">Cancel</button>
+>>>>>>> ae1d9a742f5006e2d5bb1fa98198d3851d4adb7e
 </div>
