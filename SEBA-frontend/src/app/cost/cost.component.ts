@@ -33,6 +33,8 @@ export class CostComponent implements OnInit {
   editCost() {
     document.getElementById("cost").className = "form-group";
     document.getElementById("cost").setAttribute("contenteditable", "true");
+    document.getElementById("cost").style.background = "white";
+    document.getElementById("cost").style.border = "1px black solid"
     document.getElementById("editCostButton").style.display = 'none';
     document.getElementById("saveCostButton").style.display = '';
     document.getElementById("cancelCostButton").style.display = '';
@@ -45,6 +47,8 @@ export class CostComponent implements OnInit {
     document.getElementById("cancelCostButton").style.display = "none";
     document.getElementById("cost").className="";
     document.getElementById("cost").setAttribute("contenteditable", "false");
+    document.getElementById("cost").style.background = "none";
+    document.getElementById("cost").style.border = "none"
     document.getElementById("cost").innerHTML = this.event.cost[0];
   }
 
@@ -59,11 +63,15 @@ export class CostComponent implements OnInit {
     document.getElementById("editCostButton").style.display = '';
     document.getElementById("saveCostButton").style.display = "none";
     document.getElementById("cancelCostButton").style.display = "none";
+    document.getElementById("cost").style.background = "none";
+    document.getElementById("cost").style.border = "none"
     document.getElementById("cost").innerHTML = newCost;
   }
 
   editDescr() {
     document.getElementById("costDescr").className = "form-group";
+    document.getElementById("costDescr").style.background = "white";
+    document.getElementById("costDescr").style.border = "1px black solid"
     document.getElementById("costDescr").setAttribute("contenteditable", "true");
     document.getElementById("editDescrButton").style.display = 'none';
     document.getElementById("saveDescrButton").style.display = '';
@@ -76,6 +84,8 @@ export class CostComponent implements OnInit {
     document.getElementById("saveDescrButton").style.display = "none";
     document.getElementById("cancelDescrButton").style.display = "none";
     document.getElementById("costDescr").className="";
+    document.getElementById("costDescr").style.background = "none";
+    document.getElementById("costDescr").style.border = "none"
     document.getElementById("costDescr").setAttribute("contenteditable", "false");
     document.getElementById("costDescr").innerHTML = this.event.cost[1];
   }
@@ -87,6 +97,8 @@ export class CostComponent implements OnInit {
     model.cost[1] = newCost;
     this.eventService.updateEvent(id, model).subscribe();
     document.getElementById("costDescr").className="";
+    document.getElementById("costDescr").style.background = "none";
+    document.getElementById("costDescr").style.border = "none"
     document.getElementById("costDescr").setAttribute("contenteditable", "false");
     document.getElementById("editDescrButton").style.display = '';
     document.getElementById("saveDescrButton").style.display = "none";

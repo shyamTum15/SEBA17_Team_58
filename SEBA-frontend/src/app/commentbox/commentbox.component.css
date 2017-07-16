@@ -14,7 +14,6 @@ ul {
 #commentDisplay{
 max-height: 400px !important;
 overflow: scroll;
-width: 500px;
 margin-top: 5px;
 
 }
@@ -32,5 +31,4 @@ margin-top: 5px;
 }
 
 #newComment{
-	width: 500px;
 }

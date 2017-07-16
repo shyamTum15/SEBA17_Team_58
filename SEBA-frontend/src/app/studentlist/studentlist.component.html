@@ -6,34 +6,15 @@
     <div class="col-md-3">
       <div class="row">
         <app-planstatus></app-planstatus>
+        <hr/>
       </div>
       <div class="row">
         <app-cost></app-cost>
+        <hr/>
       </div>
     </div>
     <div class="col-md-6">
-        <h4> Student's Considered for Event </h4>
-        <button id="createList2" type="button" class="btn btn-md btn-primary" (click)="getStudentByClass()">Show List</button>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Student's Name</th>
-              <th>Class</th>
-              <th>Address</th>
-              <th>Parent's Mail</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let student of modelStudent">
-              <td> {{student.name}} </td>
-              <td> {{student.class}} </td>
-              <td> {{student.address}} </td>
-              <td> {{student.parentemail}} </td>
-            </tr>
-          </tbody>
-        </table>
-    <div class="row">
-      <h4> Add more Students </h4>
+      <h4> Add Students </h4>
       <form class="form-group" id="addStudentForm" (submit)="addStudent()">
         <div class="row">
           <div class="form-group">
@@ -75,13 +56,13 @@
         </div>
       </form>
     </div>
-
-  </div>
   <div class="col-md-3">
     <div class="row">
       <app-schedule></app-schedule>
+      <hr/>
       <div class="row">
         <app-packinglist></app-packinglist>
+        <hr/>
       </div>
     </div>
   </div>

@@ -36,6 +36,8 @@ export class ScheduleComponent implements OnInit {
   editScheduleText() {
     document.getElementById("scheduleText").className = "form-group";
     document.getElementById("scheduleText").setAttribute("contenteditable", "true");
+    document.getElementById("scheduleText").style.background = "white";
+    document.getElementById("scheduleText").style.border = "1px black solid"
     document.getElementById("editScheduleButton").style.display = 'none';
     document.getElementById("saveScheduleButton").style.display = '';
     document.getElementById("cancelScheduleButton").style.display = '';
@@ -50,6 +52,8 @@ export class ScheduleComponent implements OnInit {
     document.getElementById("saveScheduleButton").style.display = "none";
     document.getElementById("cancelScheduleButton").style.display = "none";
     document.getElementById("scheduleText").className="";
+    document.getElementById("scheduleText").style.background = "none";
+    document.getElementById("scheduleText").style.border = "none";
     document.getElementById("scheduleText").setAttribute("contenteditable", "false");
     document.getElementById("scheduleText").innerHTML = this.event.schedule;
   }
@@ -65,6 +69,8 @@ export class ScheduleComponent implements OnInit {
     this.event = model;
     this.eventService.updateEvent(id, model).subscribe();
     document.getElementById("scheduleText").className="";
+    document.getElementById("scheduleText").style.background = "none";
+    document.getElementById("scheduleText").style.border = "none";
     document.getElementById("scheduleText").setAttribute("contenteditable", "false");
     document.getElementById("editScheduleButton").style.display = '';
     document.getElementById("saveScheduleButton").style.display = "none";

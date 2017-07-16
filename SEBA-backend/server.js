@@ -29,9 +29,9 @@ var port = 3000;
 app.get('/',function(req,res){
     res.send("Hello from Seba Team 58...");
 });
-var router = require('./routes');
-var routerUser = require('./routesUser');
-var routerStudent = require('./routesStudent');
+var router = require('./routes/routes');
+var routerUser = require('./routes/routesUser');
+var routerStudent = require('./routes/routesStudent');
 
 //middleware
 app.use(bodyParser.urlencoded({extended:true}));
