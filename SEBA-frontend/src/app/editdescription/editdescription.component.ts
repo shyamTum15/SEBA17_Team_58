@@ -59,25 +59,17 @@ export class EditDescriptionComponent implements OnInit {
   Transfers the description box back into an uneditable text field.
   Hides the save and cancel buttons and displays the edit buttons. */
     saveEdit() {
-    var newDescr = document.getElementById("textDescr").innerHTML;
+    var newDescr = document.getElementById("textDescr").innerText;
     var id = this.route.snapshot.params['id'];
-    console.log("[infotext] infotext Before getEvent(): " + this.event.infotext);
-    console.log("[infotext] schedule Before getEvent(): " + this.event.schedule);
-    this.getEvent();
-    console.log("[infotext] infotext After getEvent(): " + this.event.infotext);
-    console.log("[infotext] schedule After getEvent(): " + this.event.schedule);
     var model = this.event;
     model.infotext = newDescr;
     this.eventService.updateEvent(id, model).subscribe();
-    this.getEvent();
     document.getElementById("textDescr").className = "";
     document.getElementById("textDescr").setAttribute("contenteditable", "false");
     document.getElementById("editButton").style.display = '';
     document.getElementById("saveButton").style.display = "none";
     document.getElementById("cancelButton").style.display = "none";
     document.getElementById("textDescr").innerHTML = newDescr;
-    console.log("[infotext] infotext After getEvent() and update: " + this.event.infotext);
-    console.log("[infotext] schedule After getEvent() and update: " + this.event.schedule);
   }
 
   hideWhenParent() {
