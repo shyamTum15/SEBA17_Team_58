@@ -74,10 +74,17 @@ export class HomeComponent implements OnInit {
   // }
 
   deleteEvent(id){
+    var val = 0;
+    if(id){
+    val = 1;
+    alert("do you want to delete the event parmanently ?");
+    }
+    if (val==1){
     this.eventService.deleteEvent(id)
          .subscribe(()=>{
            this.getEvents();
          })
+       }
   }
 
   hideWhenParent(){
