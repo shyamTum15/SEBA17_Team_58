@@ -1,19 +1,22 @@
 <div class="container" id="overview">
-  <div class="row" id="headlineEvent"><h2>{{event.name}} &nbsp; &nbsp; &nbsp; {{event.class}} &nbsp; &nbsp; &nbsp;
-    {{event.teacher}}</h2></div>
+  <div class="row" id="headlineEvent">
+    <h2>{{event.name}} &nbsp; &nbsp; &nbsp; {{event.class}} &nbsp; &nbsp; &nbsp;
+    {{event.teacher}}</h2>
+  </div>
   <div class="row">
     <div class="col-md-3">
       <div class="row">
-<<<<<<< HEAD
         <app-planstatus></app-planstatus>
+        <hr/>
       </div>
       <div class="row">
         <app-cost></app-cost>
+        <hr/>
       </div>
       <div class="row">
-        <button type="button" id="createListButton" class="btn btn-primary btn-md" *ngIf="hideWhenParent()"
-                routerLink="/studentlist/{{event._id}}" style="margin-top: 15px;"> Create Student List
+        <button type="button" id="createListButton" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" routerLink="/studentlist/{{event._id}}" style="margin-top: 15px;"> Create Student List
         </button>
+        <hr/>
       </div>
       <div class="row">
         <h6 *ngIf="hideWhenParent()">My child is allowed to participate.</h6>
@@ -24,6 +27,7 @@
     <div class="col-md-6">
       <div class="row">
         <app-editdescription></app-editdescription>
+        <hr/>
       </div>
       <div class="row">
         <div class="form-group">
@@ -34,17 +38,17 @@
     <div class="col-md-3">
       <div class="row">
         <app-schedule></app-schedule>
+        <hr/>
         <div class="row">
           <app-packinglist></app-packinglist>
+          <hr/>
         </div>
         <div class="row">
-          <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()"
-                  routerLink="/send-event/{{event._id}}">Invite
+          <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" routerLink="/send-event/{{event._id}}">Invite
           </button>
         </div>
         <div class="row">
-          <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()"
-                  (click)="toggleParticipantView()">View Participants
+          <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" (click)="toggleParticipantView()">View Participants
           </button>
           <div class="consent-list" *ngIf="toggleView">
             <h4>Invitations Accepted</h4>
@@ -59,56 +63,9 @@
                 <li>{{ditchers}}</li>
               </ul>
             </div>
-=======
-        <div class="col-md-3">
-          <div class="row">
-          <app-planstatus></app-planstatus>
-          <hr/>
-          </div>
-          <div class="row">
-            <app-cost></app-cost>
-            <hr/>
-          </div>
-          <div class="row">
-            <button type="button" id="createListButton" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" routerLink="/studentlist/{{event._id}}" style="margin-top: 15px;">  Create Student List</button>
-            <hr/>
-          </div>
-          <div class="row">
-            <h6>My child is allowed to participate.</h6>
-            <button type="button" class="btn btn-primary btn-md">Agree</button>
-            <button type="button" class="btn btn-primary btn-md">Decline</button>
-            <hr/>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-          <app-editdescription></app-editdescription>
-          <hr/>
-          </div>
-          <div class="row">
-            <div class="form-group">
-              <app-comments></app-comments>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="row">
-            <app-schedule></app-schedule>
-            <hr/>
-          <div class="row">
-            <app-packinglist></app-packinglist>
-            <hr/>
-          </div>
-          <div class="row">
-            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()" routerLink="/send-event/{{event._id}}">Invite</button>
-            <hr/>
-          </div>
-          <div class="row">
-            <button type="button" class="btn btn-primary btn-md" *ngIf="hideWhenParent()">View Participants</button>
-            <hr/>
->>>>>>> 87944ba97f7937909b7daaaa85c1231581b1be86
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
